@@ -1,27 +1,19 @@
 <?php 
 
-  header( 'Content-Type: text/html; charset=utf-8' );
+  include 'dbconnect.php';
 
-  $host = "localhost";
-  $user = "root";
-  $pass = "root";
-
-  $databaseName = "lcmdashboard";
   $tableName = "langdetail";
 
   $con = mysql_connect($host,$user,$pass);
-  $dbs = mysql_select_db($databaseName, $con);
-  
+  $dbs = mysql_select_db($databaseName, $con);  
+
   mysql_set_charset("utf8", $con);
-  //echo mysql_client_encoding($con);
 
   $query = $_POST['query'];
 
   $result = mysql_query("SELECT * FROM $tableName where langname_eng = '$query'",$con);          //query
   $i = 0;
   while ($result1 = mysql_fetch_assoc($result)) {
- 
-    
     $array[] = $result1['langcode_iso'];
     $array[] = $result1['langcode_wmf'];
     $array[] = $result1['langname_eng'];
@@ -42,10 +34,8 @@
     $array[] = $result1['spellchecker'];
     $array[] = $result1['glossary'];
     $array[] = $result1['f_or_i'];
-    
-    
   }
 
   echo json_encode($array) ;
 
-?>
+  ?>

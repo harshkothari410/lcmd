@@ -1,12 +1,8 @@
 <?php
-	header('Content-Type: text/html; charset=UTF-8');
-	$host = 'localhost';
-	$user = 'root';
-	$pass = 'root';
-
-	$databaseName = 'lcmdashboard';
+	
+	include 'dbconnect.php';
+	
 	$tableName = 'langdetail';
-
 	$con = mysql_connect($host,$user,$pass);
 	mysql_set_charset('utf8',$con);
 	$dbs = mysql_select_db($databaseName,$con);

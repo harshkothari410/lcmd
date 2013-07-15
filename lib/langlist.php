@@ -1,10 +1,6 @@
 <?php
-	header('Content-Type: text/html; charset=UTF-8');
-	$host = 'localhost';
-	$user = 'root';
-	$pass = 'root';
+	include 'dbconnect.php';
 
-	$databaseName = 'lcmdashboard';
 	$tableName = 'langdetail';
 
 	$con = mysql_connect($host,$user,$pass);
