@@ -4,7 +4,7 @@ $(function() {
 		var parameter = $this.attr('id');
 		if(this.checked){
 			
-			filterdata($this.attr('id'));
+			filterdata($this.val());
 			//langCount(data);
 
 			filtershow($this.attr('id'),$this.closest('label').text());

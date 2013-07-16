@@ -67,10 +67,11 @@
 	</div>	
 </div>
 
+
+
 <div id="lang1" class="span6">
 	<div class="well">
 		<table class="table table-striped" id="language1">
-
 		</table>
 	</div>	
 </div>
@@ -79,7 +80,6 @@
 <div id="lang2" class="span6">
 	<div class="well">
 		<table class="table table-striped" id="language2">
-
 		</table>
 	</div>	
 </div>

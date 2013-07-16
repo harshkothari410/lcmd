@@ -1,10 +1,5 @@
 <?php
-	header('Content-Type: text/html; charset=UTF-8');
-	$host = 'localhost';
-	$user = 'root';
-	$pass = 'root';
-
-	$databaseName = 'lcmdashboard';
+	include '../../lib/dbconnect.php';
 	$tableName = 'langdetail';
 
 	$con = mysql_connect($host,$user,$pass);
@@ -13,11 +8,9 @@
 	mysql_query("SET NAMES 'utf8'", $con);
 
 	$var = $_GET['query'];
-	//$var = "jquery_ime webfonts";
-	//echo $var;
+
 	$vars = explode(' ', $var);
 	
-	//var_dump($vars);
 	$and = ' and ';	
 	$string = null;
 	$j = 0;
@@ -33,14 +26,11 @@
 			$string = $string. $and . $vars[$i]. '=1';
 	}
 
-	//echo $string;
 	$query = 'select * from langdetail';
 	
 	if(count($vars) > 0 && strlen($var) > 2)
 		$query = 'select * from langdetail where '.$string;
 	
-		//echo $query;
-
 	$result = mysql_query($query,$con);
 
 	$i = 0;
@@ -53,5 +43,4 @@
 	}
 	
 	echo json_encode($array);
-	//echo json_encode(count($vars));
 ?>
