@@ -1,5 +1,6 @@
 <?php
 	include '../../lib/dbconnect.php';
+	header("access-control-allow-origin: *");
 	$tableName = 'langdetail';
 
 	$con = mysql_connect($host,$user,$pass);
@@ -42,5 +43,6 @@
 		$i = $i + 1;
 	}
 	
-	echo json_encode($array);
+	$json = json_encode($array);
+	echo isset($_GET['callback']) ? "{$_GET['callback']}($json)" : $json;
 ?>
