@@ -12,28 +12,92 @@
 	<!--<link rel="stylesheet" type="text/css" href="example.css"> -->
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script src="../js/bootstrap.js"></script>
-	<script type="text/javascript">
-		$(function(){
-		$('body').on('click','.close',function () {
-			alert('dd');
-			$('.bar').attr('style','width : 60%;');
-		})
-	})
-	</script>
+
 	
 </head>
 <body>
-	<div class='row-fluid'>
-		<div class='filtershow alert-success'>
-			<div class="alert span2">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<strong>Warning!</strong>
+	<!-- Dropdown -->
+	<div class="accordion span6" id="accordion2">
+
+		<!-- Heading 1 -->
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#uls">
+					Universal Language Selector
+				</a>
+			</div>
+			<div id="uls" class="accordion-body collapse in">
+				<div class="accordion-inner">
+					Webfonts
+				</div>
+
+				<div class="accordion-inner">
+					Input Methods
+				</div>
+
+				<div class="accordion-inner">
+					Internationalization Support
+				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="progress">
-  		<div class="bar" style=""></div>
+		<!-- Heading 2 -->
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#narayam">
+					Narayam
+				</a>
+			</div>
+			<div id="narayam" class="accordion-body collapse">
+				<div class="accordion-inner">
+					Input Methods
+				</div>
+			</div>
+		</div>
+
+		<!-- Heading 3 -->
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#milkshake">
+					Project Milkshake
+				</a>
+			</div>
+
+			<div id="milkshake" class="accordion-body collapse">
+				<div class="accordion-inner">
+					Input Method Library
+				</div>
+
+				<div class="accordion-inner">
+					Webfont Library  
+				</div>
+
+				<div class="accordion-inner">
+					i18n Library
+				</div>
+
+				<div class="accordion-inner">
+					ULS Library
+				</div>
+			</div>
+		</div>
+
+		<!-- Heading 4 -->
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#webfonts">
+					Webfonts
+				</a>
+			</div>
+			<div id="webfonts" class="accordion-body collapse">
+				<div class="accordion-inner">
+					Webfonts
+				</div>
+			</div>
+		</div>
+
 	</div>
+	<!-- Dropdown Over -->
+
 </body>
 </html>
