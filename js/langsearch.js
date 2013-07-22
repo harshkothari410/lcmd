@@ -1,10 +1,9 @@
 $(function(){
-   
+   $('.switch').bootstrapSwitch();
+
    var langdetail_var = ["langcode_iso", "langcode_wmf", "langname_eng", "langname_autonym", "langname_html", "macro_lang", "wmf_proj_status", "fallback_code", "narayam", "jquery_ime", "webfonts", "jquery_webfonts", "i18n_mw_core", "jquery_i18n", "jquery_uls", "translate", "dictionary", "spellchecker", "glossary" ,"f_or_i"];
    
    var langdetail = ["Language Code(ISO)", "Language Code(WMF)", "Language Name", "Language Name(Autonym)", "Language Code(HTML)", "Macro Language", "WMF Project Status", "Fallback code", "Narayam", "jquery.ime", "Webfonts", "jquery.webfonts", "i18n mw core", "jquery.i18n", "jquery.uls", "Translate", "Dictionary", "Spellchecker", "Glossary" ,"Feature/Incubator"];
-
-   $('#lang1,#lang2').hide();
    
    $("#input").typeahead({
       source : function(query,process){
@@ -17,6 +16,9 @@ $(function(){
             success : function(data){
                //console.log(data);
                process(data);
+           }
+           error : function(data){
+            console.log(data);
            }
        })
      },
