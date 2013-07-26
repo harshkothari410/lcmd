@@ -44,25 +44,32 @@
 			border-top-style: solid;
 			border-top-width: 1px;
 			color: rgb(51, 51, 51);
-			display: table-cell;
+			display: inline-block;
 			font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 			font-size: 14px;
-			height:38px;
+			min-height:38px;
+			height: auto;
 			line-height: 28px;
 			margin-bottom: 0px;
 			margin-left: 0px;
 			margin-right: 0px;
 			margin-top: 0px;
-			max-width: none;
 			padding-bottom: 4px;
 			padding-left: 15px;
 			padding-right: 15px;
 			padding-top: 4px;
 			text-align: left;
 			vertical-align: middle;
+			/*
 			width: 100%;
+			*width: 99.94680851063829%;
+			*/
 			margin-bottom: 2px;
+
 		}
+
+		
+
 		#tes1{
 			margin-top: -4px;
 		}
@@ -75,11 +82,11 @@
 	<div class='span12 well'>
 		New Dropdown Proposed Scheme
 	</div>
-	<div class="row-fluid">
-	<div class="span5 offset1">			
-		<div class='span12' id='boxed'>
-			<div class="span6">Language Code (ISO)</div>
-			<div class="span4" id="langcode_iso">gu</div>
+	<div class="span12 row-fluid">
+	<div class="span5 offset1 row-fluid">			
+		<div class='span12 row-fluid' id='boxed'>
+			<div class="span6 row-fluid">Language Code (ISO)</div>
+			<div class="span4 row-fluid" id="langcode_iso">gu</div>
 			<a class="btn btn-primary edit" id="tes1" href="" data-toggle='modal' data-placement='right' title='Edit' href='' data-dismiss='modal'><i class="icon-pencil icon-white"></i></a>
 		</div>
 
@@ -113,10 +120,10 @@
 			<a class="btn btn-primary edit" id="tes1" href="" data-toggle='modal' data-placement='right' title='Edit' href='' data-dismiss='modal'><i class="icon-pencil icon-white"></i></a>
 		</div>
 
-		<div class='span12' id='boxed'>
-			<div class="span6">Macro Language</div>
-			<div class="span2" id=""><i class="icon-ok"></i></div>
-			<div id="normal-toggle-button" data-on-label="Yes" data-off-label="No" data-on="primary" data-off="danger" class="switch test">
+		<div class='span12 row-fluid' id='boxed'>
+			<div class="span6 row-fluid">Macro Language</div>
+			<div class="span3 row-fluid" id=""><i class="icon-ok"></i></div>
+			<div id="normal-toggle-button row-fluid" data-on-label="Yes" data-off-label="No" data-on="primary" data-off="danger" class="switch test">
 				<input type="checkbox" checked="checked">
 			</div>
 		</div>
@@ -290,13 +297,13 @@
 				<div id="more_info" class="accordion-body collapse">
 					<div class="accordion-inner">
 						<div class="span8">Webfonts</div>
-						<div class="span2" value="yes">Lohit Bengali</div>
+						<div class="span2" value="yes" id="fontname">Lohit Bengali</div>
 						<button class="btn btn-primary test binary"><i class="icon-pencil icon-white"></i></button>
 					</div>
 
 					<div class="accordion-inner">
 						<div class="span8">Input Methods</div>
-						<div class="span2" value="yes">Inscript</div>
+						<div class="span2" value="yes" id="inputmethod">Inscript</div>
 						<button class="btn btn-primary test binary"><i class="icon-pencil icon-white"></i></button>
 					</div>
 				</div>
@@ -520,8 +527,9 @@
 	</div>
 	</div>
 </div>
-<div class="well" > Footer </div>
-
+<footer>
+Harsh Kothari
+</footer>
 
 <!-- Model -->
 <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -617,6 +625,15 @@
     			}
 			});
 
+            $.getJSON('../data/langtofontmap.json')
+            	.done(function(data){
+            		$.each(data, function(langcode, font) {
+            			if (langcode == 'gu'){
+            				$('#fontname').text(font);
+            			}
+            		})
+            		//console.log(data);
+            	})
  	})
  </script>
 <!--

@@ -16,7 +16,7 @@ $(function(){
             success : function(data){
                //console.log(data);
                process(data);
-           }
+           },
            error : function(data){
             console.log(data);
            }
@@ -107,5 +107,30 @@ $(function(){
          }
          
      });
-
+    
+    $('.switch').on('switch-change', function (e, data) {
+      switching(data);
+    })
 });
+
+// This is function to implement switching functionalty
+// input : 
+// output : Change the class of output as well as value
+// 
+function switching(data){
+  var $this = $(data.el);
+  var value = data.value;
+  var $valdiv = $this.parent().parent().siblings('.span3');
+  var val = $valdiv.attr('value');
+  if(value == false){
+    //console.log(1);
+    $valdiv.attr('value','no');
+    $valdiv.children().removeClass('icon-ok').addClass('icon-remove');
+    //console.log($valdiv);
+  }
+  else{
+    //console.log(2);
+    $valdiv.attr('value','yes');
+    $valdiv.children().removeClass('icon-remove').addClass('icon-ok');
+  }
+}

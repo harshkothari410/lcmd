@@ -121,11 +121,11 @@
 	},
 	"mai-inscript": {
 		"name": "इनस्क्रिप्ट",
-		depends: "hi-inscript"
+		"depends": "hi-inscript"
 		},
 	"mai-inscript2": {
 		"name": "इनस्क्रिप्ट २",
-		depends: "hi-inscript2"
+		"depends": "hi-inscript2"
 		},
 	"hi-bolnagri": {
 		"name": "बोलनागरी",
