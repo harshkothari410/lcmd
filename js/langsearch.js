@@ -1,136 +1,241 @@
-$(function(){
-   $('.switch').bootstrapSwitch();
+/*
+* js file for loading information of searched language
+* @author - Harsh Kothari (harshkothari410@gmail.com)
+* @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+* global $:false (for jshint)
+*/
+/*global $:false */
+$(function () {
+	"use strict";
+	//Load switch js and css
+	$('.switch').bootstrapSwitch();
 
-   var langdetail_var = ["langcode_iso", "langcode_wmf", "langname_eng", "langname_autonym", "langname_html", "macro_lang", "wmf_proj_status", "fallback_code", "narayam", "jquery_ime", "webfonts", "jquery_webfonts", "i18n_mw_core", "jquery_i18n", "jquery_uls", "translate", "dictionary", "spellchecker", "glossary" ,"f_or_i"];
-   
-   var langdetail = ["Language Code(ISO)", "Language Code(WMF)", "Language Name", "Language Name(Autonym)", "Language Code(HTML)", "Macro Language", "WMF Project Status", "Fallback code", "Narayam", "jquery.ime", "Webfonts", "jquery.webfonts", "i18n mw core", "jquery.i18n", "jquery.uls", "Translate", "Dictionary", "Spellchecker", "Glossary" ,"Feature/Incubator"];
-   
-   $("#input").typeahead({
-      source : function(query,process){
-         $.ajax({
-            url : "lib/langsearchshow.php",
-            type : "POST",
-            data: "query=" + query ,
-            dataType : "JSON",
-            async : false,
-            success : function(data){
-               //console.log(data);
-               process(data);
-           },
-           error : function(data){
-            console.log(data);
-           }
-       })
-     },
-     
-     updater:function(lang) { 
-         $('#lang1,#lang2').show();
-         //console.log(lang); 
-         
-         $("#title").slideUp('slow');
-         
-         $("#slideright").animate({
-            marginLeft : '-600px',
-        },'slow')
-         
-         $("#legend").hide();
-         
-         $("#slideleft").animate({
-            marginRight : '-600px',
-            marginTop : '-60px'
-            
-        },'slow')
-         
+	//Load Toottip of edit button
+	$('.edit').tooltip();
 
-         var add = "<td><div class='button-toolbar '><a class='btn edit dropdown-toggle' data-toggle='modal' data-placement='right' title='Edit' href='' data-dismiss='modal'><i class='icon-pencil' ></i></a></div></td>";
-         
-         $.ajax({
-            url: "lib/langsearchajax.php",
-            type : "POST",
-            data: "query=" + lang,
-            async : false,
-            dataType : "JSON",
-            success : function(data) { 
-                
-               if(("tr").length > 0 ){
-                  $("tr").remove();
-              }
-              for (var i=0;i<6;i++){
-                  $('#language1').append("<tr id='"+langdetail_var[i]+"'><td>" + langdetail[i] + "</td><td>" + data[i]+ "</td>"+add+"</tr>");
+	//Use of typehead plugin for searching + suggestion facility
+	$('#input').typeahead ({
+		source : function ( query, process ){
+			$.ajax({
+				url: 'lib/langsearchshow.php',
+				type: 'POST',
+				dataType: 'json',
+				data: 'query=' + query,
+				complete: function(xhr, textStatus) {
+					//called when complete
+				},
+				success: function(data, textStatus, xhr) {
+					//called when successful
+					process(data);
+				},
+				error: function(xhr, textStatus, errorThrown) {
+					//called when there is an error
+					console.log( errorThrown );
+				}
+			});
+		},
 
-              }
-              
-              for (var i=6;i<data.length;i++){
-                  $('#language2').append("<tr id='"+langdetail_var[i]+"'><td>" + langdetail[i] + "</td><td>" + data[i]+ "</td>"+add+"</tr>")
-              }
-              //console.log(data);
-          },
-          error: function(args) { console.log(args); }
-      })
-         $('.edit').tooltip();
+		updater : function (lang) {
+			hideDataAnimation();
+			languageDetail( lang );
+			return lang;
+		}
+	});
 
-				//event on clicking the button
-             
-             $('.edit').click(function(){
-                $('#myModal').modal('show');
-                $this = $(this);
-    				//console.log($this);
-    				$tr = $this.closest('tr');
-    				//console.log($tr);
-    				$td1 = $tr.find('td').first();
-    				$td2 = $td1.next();
-    				//console.log($td1);
-    				$('#oldname').html("Current value of "+$td1.text() + " : <span style='color:red;'> <b>" + $td2.text()+ "</b></span>");
-    				$('#newvalue').text('New value of ' + $td1.text());
-    				$('#myModalLabel').text($td1.text());
-    				$('#save').attr('id',$tr.attr('id'));
+	//Call when state of switch is changed
+	$('.switch').on('switch-change', function (e, data) {
+		switching(data);
+	});
 
-    			})
-             
+	//Call when press the edit button
+	$('.edit').click(function(){
+		var $this = $(this);
+		modelShow($this);
+	});
 
-             $('#save').click(function(){
-                $('#myModal').modal('hide');
-                $this = $(this);
-                var newid = $this.attr('id');
-                var oldval = $td2.text();
-                var newval = $('#changeval').val();
-                $('#changeval').val(null);
-                $td2.text(newval);
-                //console.log(newval);
-                $('#boxbutton').after("<div class='alert alert-success' align='center' id='successalert'> The value of " + $td1.text() + " is changed to " + newval + " from " + oldval +"</div>");
-                $('#successalert').hide();
-                $('#successalert').slideDown('slow').delay(3000).slideUp('slow');
-
-            })
-
-             return lang;
-         }
-         
-     });
-    
-    $('.switch').on('switch-change', function (e, data) {
-      switching(data);
-    })
+	//Call when save button clicked on model
+	$('#save').click(function(){
+		var $this = $(this);
+		dataChange($this);
+	});
 });
 
-// This is function to implement switching functionalty
-// input : 
-// output : Change the class of output as well as value
-// 
+/*
+* Function : hideDataAnimation
+* function to hide title with smooth animation 
+*/
+function hideDataAnimation () {
+	$('#title').slideUp('slow');
+	$('#slideright').animate({
+		marginLeft : '-600px',
+	},'slow');
+	$('#slideleft').animate({
+		marginRight : '-600px',
+		marginTop : '-60px'
+	},'slow');
+	$('#legend').hide();
+}
+
+/*
+* Function : languageDetail
+* Function for ajax call to fetch data from database for seleceted language
+* input : language name
+* output : fillData function call with response data
+*/
+function languageDetail(lang){
+	var returnData;
+	$.ajax({
+		url: 'lib/langsearchajax.php',
+		type: 'POST',
+		dataType: 'json',
+		data: 'query=' + lang,
+		complete: function(xhr, textStatus) {
+			//called when complete
+		},
+		success: function(data, textStatus, xhr) {
+			//called when successful
+			fillData(data);
+		},
+		error: function(xhr, textStatus, errorThrown) {
+			//called when there is an error
+		}
+	});
+	return returnData;	
+}
+
+/*
+* Function : fillData
+* Function to fill data for showing to user 
+* input : language data 
+* output : fill the data with appropriate field
+* fill the data of font detail + ime detail from json mapping
+*/
+function fillData(data) {
+	console.log(data);
+	var $this;
+	var langdetail_var = ["langcode_iso", "langcode_wmf", "langname_eng", "langname_autonym", "langname_html", "macro_lang", "wmf_proj_status", "fallback_code", "narayam", "jquery_ime", "webfonts", "jquery_webfonts", "i18n_mw_core", "jquery_i18n", "jquery_uls", "translate", "dictionary", "spellchecker", "glossary" ,"f_or_i"];
+	for (var i = 0; i < data.length; i++) {
+		//console.log(langdetail_var[i]);
+		if(data[i] === '0' || data[i] === '1' ){
+			if (data[i] === '1') {
+				$this = $('[id=' + langdetail_var[i]+']');
+				$this.html('<i class="icon-ok"></i>');
+				$this.attr('value','yes');
+				$this.siblings('.switch').bootstrapSwitch('setState',true);
+			}
+			else {
+				$this = $('[id=' + langdetail_var[i]+']');
+				$this.html('<i class="icon-remove"></i>');
+				$this.attr('value','no');
+				$this.siblings('.switch').bootstrapSwitch('setState',false);
+			}
+		}
+		else{
+			$('#' + langdetail_var[i]).text(data[i]);
+		}
+	}
+
+	$('#moreinfo').text('More info on '+ data[2]); //data[2] => language name in english
+
+	//Fill the font information
+	$.getJSON('data/langtofontmap.json', function(json, textStatus) {
+		//optional stuff to do after success
+		if (json[data[1]] !== undefined) {
+			var appendData = '';
+			for(var i = 0 ; i < json[data[1]].length ; i++)
+				appendData = appendData + '<li>' + json[data[1]][i] + '</li>';
+			$('#fontdetail').html(appendData);
+		}
+		else {
+			$('#fontdetail').text('No Font is available');
+		}
+	});
+
+	//Fill the detail of input method information
+	$.getJSON('data/langtoimemap.json', function(json, textStatus) {
+		//optional stuff to do after success
+		if (json[data[1]] !== undefined) {
+			var appendData = '';
+			for(var i = 0 ; i < json[data[1]].inputmethods.length ; i++)
+				appendData = appendData + '<li>' + json[data[1]].inputmethods[i] + '</li>';
+			$('#imedetail').html(appendData);
+		}
+		else {
+			$('#imedetail').text('No IME is available');
+		}
+	});	
+}
+
+/*
+* Function : switching
+* This function will call when state of switch is changed
+* input : object that contains DOM + event details of which switch is changed
+* output : change the state of switch + change the value of that detail
+* ajax connection is remaining for altering that detail into database
+*/
 function switching(data){
-  var $this = $(data.el);
-  var value = data.value;
-  var $valdiv = $this.parent().parent().siblings('.span3');
-  var val = $valdiv.attr('value');
-  if(value == false){
-    //console.log(1);
-    $valdiv.attr('value','no');
-    $valdiv.children().removeClass('icon-ok').addClass('icon-remove');
-    //console.log($valdiv);
-  }
-  else{
-    //console.log(2);
-    $valdiv.attr('value','yes');
-    $valdiv.children().removeClass('icon-remove').addClass('icon-ok');
-  }
+	var $this = $(data.el); //data.el => DOM (checkbox)
+	var value = data.value;
+	var $valdiv = $this.parent().parent().siblings('.iconshow');
+	var val = $valdiv.attr('value');
+	if(value === false){
+		$valdiv.attr('value','no');
+		$valdiv.children().removeClass('icon-ok').addClass('icon-remove');
+	}
+	else{
+		$valdiv.attr('value','yes');
+		$valdiv.children().removeClass('icon-remove').addClass('icon-ok');
+	}
+}
+
+/*
+* Function : modelShow 
+* This function is called when click on edit button
+* input : DOM of that button
+* output : Model show with data feeling
+*/
+function modelShow(clickedDom){
+	var $this = clickedDom;
+	$('#myModal').modal('show'); //Model will appear
+	var $divkey = $this.siblings('.span6');
+	var $divvalue = $this.siblings('.span4');
+	$('#oldname').html("Current value of "+$divkey.text() + " : <span style='color:red;'> <b>" + $divvalue.text()+ "</b></span>");
+	$('#newvalue').text('New value of ' + $divkey.text());
+	$('#myModalLabel').text($divkey.text());
+	$('#save').attr('id',$divvalue.attr('id'));
+}
+
+/*
+* Function : dataChange
+* input : DOM of that save button ; need ID for further changes
+* output : Model hide  + change the value 
+* ajax connection is remaining for altering that detail into database
+*/
+function dataChange(clickedDom){
+	var $this = clickedDom;
+	$('#myModal').modal('hide'); // Model Hide
+	var newid = $this.attr('id');
+	var newVal = $('#changeval').val();
+	$('#'+newid).text(newVal);
+	$('#changeval').val(null);
+	alertShow(newid,1); //This should be called after ajax success or fail
+}
+
+/* 
+* Function : alertShow
+* input : dataFiled of which data is changed and result (1 or 0)
+* output : alert
+* Required to call after ajax success or fail
+*/
+function alertShow(dataField,result){
+	$('#alertshow').addClass('alert');
+	if (result) {
+		$('#alertshow').addClass('alert-success');
+		$('#alertshow').text('The value of ' + dataField + ' is changed successfully.' ).hide();
+		$('#alertshow').slideDown('slow').delay(3000).slideUp('slow');
+	}
+	else{
+		$('#alertshow').addClass('alert-error');
+		$('#alertshow').text('The value of ' + dataField + ' is not changed successfully.' );
+	}
 }
