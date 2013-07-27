@@ -127,6 +127,15 @@
 	</div>
 
 	<div class='row-fluid'>
-
+	<script type="text/javascript">
+	$(function(){
+		$('td').click(function(){
+			$this = $(this);
+			var lang = $this.children().children(".span8").children(".text-info").text();
+			console.log(lang);
+			window.location.href = 'language.html?'+lang;
+		})
+		})
+	</script>
 </body>
 </html>
