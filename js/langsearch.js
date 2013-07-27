@@ -218,7 +218,7 @@ function dataChange(clickedDom){
 	var newVal = $('#changeval').val();
 	$('#'+newid).text(newVal);
 	$('#changeval').val(null);
-	alertShow(newid,1); //This should be called after ajax success or fail
+	alertShow(newid,0); //This should be called after ajax success or fail
 }
 
 /* 
@@ -236,6 +236,7 @@ function alertShow(dataField,result){
 	}
 	else{
 		$('#alertshow').addClass('alert-error');
-		$('#alertshow').text('The value of ' + dataField + ' is not changed successfully.' );
+		$('#alertshow').text('The value of ' + dataField + ' is not changed successfully.' ).hide();
+		$('#alertshow').slideDown('slow').delay(3000).slideUp('slow');
 	}
 }
