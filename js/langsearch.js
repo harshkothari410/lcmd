@@ -26,6 +26,7 @@ $(function () {
 				},
 				success: function(data, textStatus, xhr) {
 					//called when successful
+					//$('#input').val(data[0]).addClass("muted");
 					process(data);
 				},
 				error: function(xhr, textStatus, errorThrown) {
