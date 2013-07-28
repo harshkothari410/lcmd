@@ -6,15 +6,15 @@
 	$dbs = mysql_select_db($databaseName,$con);
 	mysql_query("SET NAMES 'utf8'", $con);
 
-	$query = 'select langname_eng, langname_autonym from langdetail';
+	$query = 'select langname_eng, langcode_iso from langdetail';
 	$result = mysql_query($query,$con);
 
 	while ($result1 = mysql_fetch_assoc($result)) {
-		$array[$result1['langname_eng']] = utf8_decode( utf8_encode($result1['langname_autonym']));
+		$array[$result1['langcode_iso']] = $result1['langname_eng'];
 	}
 
 	$jsondata = json_encode($array);
-	$file=fopen("../data/nametoautonym.json","w");
+	$file=fopen("../data/isotoname.json","w");
 	fwrite($file, $jsondata);
 	fclose($file);
 	//echo 'file created successfully';
