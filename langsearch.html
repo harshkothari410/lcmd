@@ -11,10 +11,18 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-switch.css">
 	<link rel="stylesheet" type="text/css" href="css/boxed.css">
+	<link rel="stylesheet" type="text/css" href="jquery.ime/css/jquery.ime.css"/>
+	<link rel="stylesheet" type="text/css" href="css/example.css">
 	
+	<script type="text/javascript" src="js/hogan.js"></script>
 	<script type="text/javascript" src="js/jquery-1.10.2-min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap-switch.js"></script>
+	<script type="text/javascript" src="jquery.ime/src/jquery.ime.js"></script>
+	<script type="text/javascript" src="jquery.ime/src/jquery.ime.selector.js"></script>
+	<script type="text/javascript" src="jquery.ime/src/jquery.ime.preferences.js"></script>
+	<script type="text/javascript" src="jquery.ime/src/jquery.ime.inputmethods.js"></script>
+	<script type="text/javascript" src="js/typeahead.js"></script>
 	<script type="text/javascript" src='js/langsearch.js'></script>
 
 </head>
@@ -57,7 +65,10 @@
 
 			<div class="span4">
 				<p align="center" id="slideright">
-					<input type="text"  class="input-xlarge " id="input" placeholder="Search Language" data-provide="typeahead" autocomplete="off">
+					<!--<input type="text"  class="input-xlarge " id="input" placeholder="Search Language" data-provide="typeahead" autocomplete="off">-->
+					<div class="example example-twitter-oss">
+						<input class="typeahead" id="typeahead" type="text" placeholder="Language Search" >
+					</div>
 				</p>
 
 				<div class="row-fluid" id="legend">

@@ -14,6 +14,7 @@ $(function () {
 	$('.edit').tooltip();
 
 	//Use of typehead plugin for searching + suggestion facility
+	/*
 	$('#input').typeahead ({
 		source : function ( query, process ){
 			$.ajax({
@@ -40,6 +41,40 @@ $(function () {
 			languageDetail( lang );
 			return lang;
 		}
+	}); */
+
+	$('#typeahead').ime();
+	$('.example-twitter-oss .typeahead').typeahead({
+		name: 'Language Name',
+		prefetch: { 
+			url : 'data/nametoautonym.json',
+			ttl : 2000
+		},
+		limit: 10,
+		template: [
+			'<p class="repo-language" style="float:right;">{{iso}}</p>',
+			'<p class="repo-name">{{autonym}}</p>',
+			'<p class="repo-description">{{name}}</p>'
+		].join(''),
+		engine:Hogan,
+		selected : function(item){
+			console.log(item);
+		}
+	});
+
+	$('.typeahead').on('typeahead:autocompleted', function (e, datum) {
+		//console.log(e);
+		hideDataAnimation();
+		//console.log(datum.name);
+		languageDetail( datum.name );
+		//$('.typeahead').val(datum.name + ' - ' + datum.autonym + ' - ' + datum.iso);
+	});
+
+	$('.typeahead').on('typeahead:selected', function (e, datum) {
+		hideDataAnimation();
+		languageDetail( datum.name );
+		//console.log(datum.name);
+		//$('.typeahead').val(datum.name + ' - ' + datum.autonym + ' - ' + datum.iso);
 	});
 
 	//Call when state of switch is changed
@@ -66,8 +101,8 @@ $(function () {
 */
 function hideDataAnimation () {
 	$('#title').slideUp('slow');
-	$('#slideright').animate({
-		marginLeft : '-600px',
+	$('.example').animate({
+		marginLeft : '-350px',
 	},'slow');
 	$('#slideleft').animate({
 		marginRight : '-600px',
