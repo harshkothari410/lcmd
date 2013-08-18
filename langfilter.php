@@ -47,7 +47,7 @@
 			</div>
 		</div>
 	</div>
-
+<div class="container-fluid">
 	<div class='row-fluid'>
 
 
@@ -59,9 +59,101 @@
 
 		</div>
 </div>
+</div>
+	<div class='container-fluid'>
 	<div class='row-fluid'>
-	<div class='span3 well'>
+	<div class='span3'>
+		<div class="accordion span12" id="accordion2">
 
+					<!-- Heading 1 -->
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#" href="#">
+								Universal Language Selector
+							</a>
+						</div>
+						<div id="uls" class="accordion-body collapse in">
+							<div class="accordion-inner">						
+								<label class="checkbox inline">
+									<input type="checkbox" id="webfonts" value="webfonts"> webfonts
+								</label>
+							</div>
+
+							<div class="accordion-inner">
+								<label class="checkbox inline">
+									<input type="checkbox" id="jquery_ime" value="jquery_ime"> Input Methods
+								</label>
+							</div>
+
+							<div class="accordion-inner">
+								<label class="checkbox inline">
+									<input type="checkbox" id="jquery_uls" value="jquery_uls"> Internationalization Support
+								</label>
+							</div>
+						</div>
+					</div>
+		
+
+					<!-- Heading 2 -->
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#" href="#">
+								Project Milkshake
+							</a>
+						</div>
+						<div id="" class="accordion-body collapse in">
+							<div class="accordion-inner">						
+								<label class="checkbox inline">
+									<input type="checkbox" id="jquery_ime" value="jquery_ime"> Input Method Library
+								</label>
+							</div>
+
+							<div class="accordion-inner">
+								<label class="checkbox inline">
+									<input type="checkbox" id="jquery_webfonts" value="jquery_webfonts"> Webfont Library
+								</label>
+							</div>
+
+							<div class="accordion-inner">
+								<label class="checkbox inline">
+									<input type="checkbox" id="jquery_i18n" value="jquery_i18n"> i18n Library
+								</label>
+							</div>
+
+							<div class="accordion-inner">
+								<label class="checkbox inline">
+									<input type="checkbox" id="jquery_uls" value="jquery_uls"> ULS Library
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<!-- Heading 3 -->
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#" href="#">
+								Legacy Extension
+							</a>
+						</div>
+						<div id="" class="accordion-body collapse in">
+							<div class="accordion-inner">						
+								<label class="checkbox inline">
+									<input type="checkbox" id="narayam" value="narayam"> Narayam
+								</label>
+							</div>
+
+							<div class="accordion-inner">
+								<label class="checkbox inline">
+									<input type="checkbox" id="webfonts" value="webfonts"> Webfonts
+								</label>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+		</div>
+<!--
 		<div class='control-group'>
 		<label class="checkbox inline">
   			<input type="checkbox" id="jquery_ime" value="jquery_ime"> jquery.ime
@@ -128,14 +220,19 @@
 		</label>
 		</div>
 	</div>
+-->
 
-	<div class='span9 well' id=''>
-		<table class='table table-striped' id='langlist'>
 
-		</table>
+	<div class='span9' id=''>
+		<div class="row-fluid">
+			<table class='table table-striped table-bordered' id='langlist'>
+
+			</table>
+		</div>
 	</div>
+	</div>
+</div>
 
-	<div class='row-fluid'>
 	<script type="text/javascript">
 	$(function(){
 		$('td').click(function(){
