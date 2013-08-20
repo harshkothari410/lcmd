@@ -7,7 +7,7 @@
 		</div>
 
 		<div class="span6" align="center">
-			<a class="btn btn-primary btn-large btn-block " style="width:284px;" href="inputlang.html">
+			<a class="btn btn-primary btn-large btn-block " style="width:284px;" href="inputlang.php">
 				Create new Entry
 			</a>
 		</div>
