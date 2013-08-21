@@ -13,7 +13,7 @@
 				<ul class="nav pull-right">
 					<li><a href="index.php">Home</a></li>
 					<li><a href="#">About Us</a></li>
-					<li><a href="#">Languages</a></li>
+					<li><a href="langfilter.php">Languages</a></li>
 					<li><a href="lib/logout.php">Logout</a></li>
 				</ul>
 			</div>

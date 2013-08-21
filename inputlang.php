@@ -140,7 +140,7 @@
 			</div>
 			
 			<div class="control-group">
-				<label class="control-label">jquery.webfonts</label>
+				<label class="control-label">uls.webfonts</label>
 				<div class="controls">
 					<label class="radio inline"> <input type="radio" class="" name="jquery_webfonts" value="1" />Yes</label>
 					<label class="radio inline"> <input type="radio" class="" name="jquery_webfonts" value="0" />No</label>
@@ -220,7 +220,7 @@
 			<div class="control-group">
 				
 				<div class="controls">
-					<button class="btn btn-primary btn-large" value="submit" type="submit" id="submit">Submit</button>
+					<a class="btn btn-primary btn-large" id="submit">Submit</a>
 				</div>
 			</div>	
 			
@@ -243,17 +243,14 @@
 			$("#langcode_iso").popover();
 			$("#langname_autonym").ime();
 
-			
-			
-			var dropdown1 ="<li>Harsh</li>";
-  						
-  			$('#dLabel').click(function() {
-	    			//alert("bingo");
-	    			console.log(dropdown1);
-	    				    			
-	    			$('#dLabel').append(dropdown1);
-	    			//$('.dropdown-toggle').dropdown('show');
-	    		});
+			$('#submit').click(function(){
+				if ( $('#langcode_iso').val() == '' ) {
+					alert('Enter ISO code of Language');
+				}
+				else{
+					$('form').submit();	
+				}
+			})
 		})
 	</script>
 </body>

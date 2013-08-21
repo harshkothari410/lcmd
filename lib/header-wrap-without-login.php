@@ -13,7 +13,7 @@
 				<ul class="nav pull-right">
 					<li><a href="index.php">Home</a></li>
 					<li><a href="#">About Us</a></li>
-					<li><a href="#">Languages</a></li>
+					<li><a href="langfilter.php">Languages</a></li>
 					<li class="dropdown">
 						<a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
 						<div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
