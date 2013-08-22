@@ -26,6 +26,7 @@
 	<script type="text/javascript" src="jquery.ime/src/jquery.ime.preferences.js"></script>
 	<script type="text/javascript" src="jquery.ime/src/jquery.ime.inputmethods.js"></script>
 	<script type="text/javascript" src="js/typeahead.js"></script>
+	<script type="text/javascript" src='js/langsearch.js'></script>
 
 </head>
 <body>
