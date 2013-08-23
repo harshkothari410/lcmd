@@ -62,18 +62,16 @@ var wedges = pieChart.selectAll('g')
 var updatePie = function(newData) {
 
 	wedges.data(pie(newData)) // pass in our 'pie-ized' data
-	//.select('path')
+	.select('path')
 	.transition()
 	.duration(1000)
-	.attrTween("d", arcTween);
-/*
 	.attr({
 		'fill' : function(d,i) {
 			return color(i);
 		},
 		'd' : arc
 	});
-*/
+
 	//Labels
 	labels.data(pie(newData))
 	.transition()
@@ -87,17 +85,4 @@ var updatePie = function(newData) {
 	.text(function(d){
 		return d.value;
 	});
-}
-
-function arcTween(a) {
-	console.log(1);
-  var i = d3.interpolate(this._current, a);
-  	console.log(2);
-
-  this._current = i(0);
-  	console.log(2);
-
-  return function(t) {
-    return arc(i(t));
-  };
 }
