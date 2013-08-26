@@ -16,6 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="css/boxed.css">
 	<link rel="stylesheet" type="text/css" href="jquery.ime/css/jquery.ime.css"/>
 	<link rel="stylesheet" type="text/css" href="css/example.css">
+	<link rel="stylesheet" type="text/css" href="css/menusearch.css">
 	
 	<script type="text/javascript" src="js/hogan.js"></script>
 	<script type="text/javascript" src="js/jquery-1.10.2-min.js"></script>

@@ -85,7 +85,7 @@ function filterdata(value){
 			//langCount(data);
 			var a = data.length;
 			var b = 462 - a;
-			updatePie([a,b]);
+			tests({'Yes' : a,'No':b});
 		},
 		error : function(data){
 			$('#langcount').html('<h3 class="text-info">' + (data.length)+ ' Languages </h3>');
