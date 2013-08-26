@@ -39,3 +39,18 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+	$('.typeahead').on('typeahead:selected', function (e, datum) {
+		if ($('.typeahead').parent().parent().attr('id') == 'noanimate') {
+
+		}
+		else {
+			hideDataAnimation();	
+		}
+		//alert(datum.name);
+		//window.location.href = 
+		window.location.href = 'language.php?'+datum.name;
+		//console.log(datum.name);
+		//$('.typeahead').val(datum.name + ' - ' + datum.autonym + ' - ' + datum.iso);
+	});
+</script>
