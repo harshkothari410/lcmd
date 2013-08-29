@@ -232,6 +232,25 @@
 		</div>
 	</div>
 	
+	<!--Model -->
+
+	<!-- Modal -->
+	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3 id="myModalLabel">Temp</h3>
+		</div>
+		<div class="modal-body">
+			<p id="oldname" align="center"></p>
+			<legend></legend>
+			<p id="newvalue" align="center"></p>
+			<p align='center'><input type="text" class="input-large" id="changeval" name="changeval" align='center'/></p>
+		</div>
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">Edit</button>
+			<button class="btn btn-primary" id="save">Save changes</button>
+		</div>
+	</div>
 	
 	<link href="jquery.ime/css/jquery.ime.css" rel="stylesheet" />
 	<script src="jquery.ime/src/jquery.ime.js"></script>
@@ -248,9 +267,14 @@
 					alert('Enter ISO code of Language');
 				}
 				else{
-					$('form').submit();	
+					//$('form').submit();	
+					$('#myModal').modal('show'); 
 				}
 			})
+
+			$('#save').click(function(event) {
+				$('form').submit();
+			});
 		})
 	</script>
 </body>

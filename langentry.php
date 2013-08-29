@@ -81,7 +81,7 @@
 //langcodeiso, langcodewmf, langname, langname_a, langcodehtml, macro_lang, wmf_pro_status, fallback_code, narayam, jquery_ime, webfonts, jquery_webfonts, i18n_mw_core, jquery_i18n, jquery_uls, translate1, dictionary, spellchecker, glossary ,froi)
 
 		$query = "INSERT into langdetail(langcode_iso, langcode_wmf, langname_eng, langname_autonym, langname_html, macro_lang, wmf_proj_status, fallback_code, narayam, jquery_ime, webfonts, jquery_webfonts, i18n_mw_core, jquery_i18n, jquery_uls, translate, dictionary, spellchecker, glossary ,f_or_i) values('$langcode_iso', '$langcode_wmf', '$langname_eng', '$langname_autonym', '$langname_html', '$macro_lang', '$wmf_proj_status', '$fallback_code', '$narayam', '$jquery_ime', '$webfonts', '$jquery_webfonts', '$i18n_mw_core', '$jquery_i18n', '$jquery_uls', '$translate', '$dictionary', '$spellchecker', '$glossary' ,'$f_or_i')";
-
+/*
 		if (mysql_query($query)){
 			exec('php script/nametoautonym.php');
 			echo("<div class='alert alert-success' align='center'>Successfully stored in database</div>");
@@ -89,6 +89,7 @@
 		else{
 			echo("<div class='alert alert-danger' align='center'>Fail to store in database</div>");
 		}
+*/
 		//echo("<div class='alert alert-success' align='center'>Succesfully stored in database</div>");
 	?>
 
