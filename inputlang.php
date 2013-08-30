@@ -241,10 +241,118 @@
 			<h3 id="myModalLabel">Temp</h3>
 		</div>
 		<div class="modal-body">
-			<p id="oldname" align="center"></p>
-			<legend></legend>
-			<p id="newvalue" align="center"></p>
-			<p align='center'><input type="text" class="input-large" id="changeval" name="changeval" align='center'/></p>
+			<div class="container-fluid">
+	<div id="lang1" class="span4">
+		<div class="well">
+			<table class="table table-striped" id="language1">
+				<tr>
+					<td><label  class="control-label">Language Code (ISO)</label> </td>
+					<td><label  class="control-label"> <?php echo $_POST['langcode_iso'] ? $_POST['langcode_iso'] : '-' ; ?></label></td>	
+				</tr>
+
+				<tr>
+					<td><label  class="control-label">Language Code (WMF)</label> </td>
+					<td><label  class="control-label"> <?php echo $_POST['langcode_wmf'] ? $_POST['langcode_wmf'] : '-'; ?></label></td>	
+				</tr>
+
+				<tr>
+					<td><label  class="control-label">Language Name</label> </td>
+					<td><label  class="control-label"> <?php echo $_POST['langname_eng']; ?></label></td>	
+				</tr>
+
+				<tr>
+					<td><label  class="control-label">Language Name(Autonyme)</label> </td>
+					<td><label  class="control-label"> <?php echo $_POST['langname_autonym']; ?></label></td>	
+				</tr>
+
+				<tr>
+					<td><label  class="control-label">Language Code (HTML)</label> </td>
+					<td><label  class="control-label"> <?php echo $_POST['langname_html']; ?></label></td>	
+				</tr>
+
+				<tr>
+					<td><label  class="control-label">Macro Languages</label> </td>
+					<td><label  class="control-label"> <?php echo $_POST['macro_lang']; ?></label></td>	
+				</tr>
+			</table>
+		</div>	
+	</div>
+
+	
+	<div id="lang2" class="span3">
+		<div class="well">
+			<table class="table table-striped" id="language2">
+				<tr>
+					<td><label  class="control-label"> WMF Project Status</label> </td>
+					<td><label  class="control-label"> <?php echo $_POST['wmf_proj_status'] ? '1' : '0'; ?></label></td>	
+				</tr>
+				<tr>
+					<td><label  class="control-label">Fallback code</label> </td>
+					<td><label  class="control-label"> <?php echo $_POST['fallback_code']; ?></label></td>	
+				</tr>
+
+				<tr>
+					<td><label  class="control-label">Narayam</label> </td>
+					<td><label  class="control-label"> <?php echo $_POST['narayam'] ? '1' : '0'; ?></label></td>	
+				</tr>
+
+				<tr>
+					<td><label  class="control-label">jquery.ime</label> </td>
+					<td><label  class="control-label"> <?php echo $_POST['jquery_ime'] ? '1' : '0'; ?></label></td>	
+				</tr>
+
+				<tr>
+					<td><label  class="control-label">Webfonts</label> </td>
+					<td><label  class="control-label"> <?php echo $_POST['webfonts'] ? '1' : '0'; ?></label></td>	
+				</tr>
+
+				<tr>
+					<td><label  class="control-label">jquery.webfonts</label> </td>
+					<td><label  class="control-label"> <?php echo $_POST['jquery_webfonts'] ? '1' : '0'; ?></label></td>	
+				</tr>
+
+				<tr>
+					<td><label  class="control-label">i18n mw core</label> </td>
+					<td><label  class="control-label"> <?php echo $_POST['i18n_mw_core'] ? '1' : '0'; ?></label></td>	
+				</tr>
+
+				<tr>
+					<td><label  class="control-label">jquery.i18n</label> </td>
+					<td><label  class="control-label"> <?php echo $_POST['jquery_i18n'] ? '1' : '0'; ?></label></td>	
+				</tr>
+
+				<tr>
+					<td><label  class="control-label">jquery.uls</label> </td>
+					<td><label  class="control-label"> <?php echo $_POST['jquery_uls'] ? '1' : '0'; ?></label></td>	
+				</tr>
+
+				<tr>
+					<td><label  class="control-label">Translate</label> </td>
+					<td><label  class="control-label"> <?php echo $_POST['translate'] ? '1' : '0'; ?></label></td>	
+				</tr>
+
+				<tr>
+					<td><label  class="control-label">Dictionary</label> </td>
+					<td><label  class="control-label"> <?php echo $_POST['dictionary'] ? '1' : '0'; ?></label></td>	
+				</tr>
+
+				<tr>
+					<td><label  class="control-label">Spellchecker</label> </td>
+					<td><label  class="control-label"> <?php echo $_POST['spellchecker'] ? '1' : '0'; ?></label></td>	
+				</tr>
+
+				<tr>
+					<td><label  class="control-label">Glossary</label> </td>
+					<td><label  class="control-label"> <?php echo $_POST['glossary'] ? '1' : '0'; ?></label></td>	
+				</tr>
+
+				<tr>
+					<td><label  class="control-label">Feature/incubator</label> </td>
+					<td><label  class="control-label"> <?php echo $_POST['f_or_i'] ? '1' : '0'; ?></label></td>	
+				</tr>
+			</table>
+		</div>	
+	</div>
 		</div>
 		<div class="modal-footer">
 			<button class="btn" data-dismiss="modal" aria-hidden="true">Edit</button>
