@@ -43,7 +43,7 @@
 
 	<div class='well'>
 		<div class='row-fluid'>
-			<div class='span4' id='langcount'>
+			<div class='span4' id=''>
 			</div>
 		</div>
 	</div>
@@ -223,13 +223,37 @@
 -->
 
 
-	<div class='span9' id=''>
+	<div class='span6' id=''>
 		<div id="loader" align="center">
 			<img src="img/ajax-loader.gif" align="center">
 		</div>
 		<div class="row-fluid" id="data">
 			<table class='table table-striped table-bordered' id='langlist'>
 			</table>
+		</div>
+	</div>
+
+	<div class="span3 row-fluid">
+		<div class="span12 well">
+			<div class='span4' id='langcount'>
+			</div>
+		</div>
+		<div class="span12 well">
+			Preview detail
+		</div>
+		<div class="span12 well">
+			<div>
+				Languages with projects
+			</div>
+			<div>
+				Languages in incubator
+			</div>
+			<div>
+				Languages with webfonts
+			</div>
+			<div>
+				Languages with Input Methods
+			</div>	
 		</div>
 	</div>
 	</div>
