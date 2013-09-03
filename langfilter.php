@@ -1,5 +1,39 @@
 <?php
 	session_start();
+	include 'lib/dbconnect.php';
+	$tableName = "langdetail";
+
+	$con = mysql_connect($host,$user,$pass);
+	$dbs = mysql_select_db($databaseName, $con);  
+
+	mysql_set_charset("utf8", $con);
+
+	$query = $_POST['query'];
+
+	//for featured and incubator languages
+	$result = mysql_query("SELECT * FROM $tableName where f_or_i='1'",$con);          //query
+	$i = 0;
+	while ($result1 = mysql_fetch_assoc($result)) {
+		$i = $i + 1;
+	}
+	$feature = $i;
+
+	//for webfonts
+	$result = mysql_query("SELECT * FROM $tableName where jquery_webfonts='1'",$con);
+	$i = 0;
+	while ($result1 = mysql_fetch_assoc($result)) {
+		$i = $i + 1;
+	}
+	$webfonts = $i;
+
+	//For input methods
+	$result = mysql_query("SELECT * FROM $tableName where jquery_ime='1'",$con);
+	$i = 0;
+	while ($result1 = mysql_fetch_assoc($result)) {
+		$i = $i + 1;
+	}
+	$ime = $i;
+	//echo json_encode($array);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -244,15 +278,18 @@
 		<div class="span12 well">
 			<div>
 				Languages with projects
+				<?php echo $feature ?>
 			</div>
 			<div>
-				Languages in incubator
+				Languages in incubator 
 			</div>
 			<div>
 				Languages with webfonts
+				<?php echo $webfonts ?>
 			</div>
 			<div>
 				Languages with Input Methods
+				<?php echo $ime ?>
 			</div>	
 		</div>
 	</div>
