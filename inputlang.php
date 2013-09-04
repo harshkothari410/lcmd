@@ -22,6 +22,8 @@
 	<link rel="stylesheet" type="text/css" href="css/boxed.css">
 	<link rel="stylesheet" type="text/css" href="jquery.ime/css/jquery.ime.css"/>
 	<link rel="stylesheet" type="text/css" href="css/example.css">
+	<link rel="stylesheet" type="text/css" href="css/menusearch.css">
+
 	
 	<script type="text/javascript" src="js/hogan.js"></script>
 	<script type="text/javascript" src="js/jquery-1.10.2-min.js"></script>
@@ -238,7 +240,7 @@
 	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3 id="myModalLabel">Temp</h3>
+			<h3 id="myModalLabel">Preview</h3>
 		</div>
 		<div class="modal-body">
 			<div class="container-fluid">
@@ -247,22 +249,22 @@
 			<table class="table table-striped" id="language1">
 				<tr>
 					<td><label  class="control-label">Language Code (ISO)</label> </td>
-					<td><label  class="control-label"> <?php echo $_POST['langcode_iso'] ? $_POST['langcode_iso'] : '-' ; ?></label></td>	
+					<td><label  class="control-label" id = "langcode_iso1"></label></td>	
 				</tr>
 
 				<tr>
 					<td><label  class="control-label">Language Code (WMF)</label> </td>
-					<td><label  class="control-label"> <?php echo $_POST['langcode_wmf'] ? $_POST['langcode_wmf'] : '-'; ?></label></td>	
+					<td><label  class="control-label"></label></td>	
 				</tr>
 
 				<tr>
 					<td><label  class="control-label">Language Name</label> </td>
-					<td><label  class="control-label"> <?php echo $_POST['langname_eng']; ?></label></td>	
+					<td><label  class="control-label"> </label></td>	
 				</tr>
 
 				<tr>
 					<td><label  class="control-label">Language Name(Autonyme)</label> </td>
-					<td><label  class="control-label"> <?php echo $_POST['langname_autonym']; ?></label></td>	
+					<td><label  class="control-label"> </label></td>	
 				</tr>
 
 				<tr>
@@ -279,76 +281,76 @@
 	</div>
 
 	
-	<div id="lang2" class="span3">
+	<div id="lang2" class="span4">
 		<div class="well">
 			<table class="table table-striped" id="language2">
 				<tr>
 					<td><label  class="control-label"> WMF Project Status</label> </td>
-					<td><label  class="control-label"> <?php echo $_POST['wmf_proj_status'] ? '1' : '0'; ?></label></td>	
+					<td><label  class="control-label">0</label></td>	
 				</tr>
 				<tr>
 					<td><label  class="control-label">Fallback code</label> </td>
-					<td><label  class="control-label"> <?php echo $_POST['fallback_code']; ?></label></td>	
+					<td><label  class="control-label"> 1</label></td>	
 				</tr>
 
 				<tr>
 					<td><label  class="control-label">Narayam</label> </td>
-					<td><label  class="control-label"> <?php echo $_POST['narayam'] ? '1' : '0'; ?></label></td>	
+					<td><label  class="control-label"> 0</label></td>	
 				</tr>
 
 				<tr>
 					<td><label  class="control-label">jquery.ime</label> </td>
-					<td><label  class="control-label"> <?php echo $_POST['jquery_ime'] ? '1' : '0'; ?></label></td>	
+					<td><label  class="control-label"> 0</label></td>	
 				</tr>
 
 				<tr>
 					<td><label  class="control-label">Webfonts</label> </td>
-					<td><label  class="control-label"> <?php echo $_POST['webfonts'] ? '1' : '0'; ?></label></td>	
+					<td><label  class="control-label">0</label></td>	
 				</tr>
 
 				<tr>
 					<td><label  class="control-label">jquery.webfonts</label> </td>
-					<td><label  class="control-label"> <?php echo $_POST['jquery_webfonts'] ? '1' : '0'; ?></label></td>	
+					<td><label  class="control-label">0</label></td>	
 				</tr>
 
 				<tr>
 					<td><label  class="control-label">i18n mw core</label> </td>
-					<td><label  class="control-label"> <?php echo $_POST['i18n_mw_core'] ? '1' : '0'; ?></label></td>	
+					<td><label  class="control-label">0</label></td>	
 				</tr>
 
 				<tr>
 					<td><label  class="control-label">jquery.i18n</label> </td>
-					<td><label  class="control-label"> <?php echo $_POST['jquery_i18n'] ? '1' : '0'; ?></label></td>	
+					<td><label  class="control-label">0</label></td>	
 				</tr>
 
 				<tr>
 					<td><label  class="control-label">jquery.uls</label> </td>
-					<td><label  class="control-label"> <?php echo $_POST['jquery_uls'] ? '1' : '0'; ?></label></td>	
+					<td><label  class="control-label">0</label></td>	
 				</tr>
 
 				<tr>
 					<td><label  class="control-label">Translate</label> </td>
-					<td><label  class="control-label"> <?php echo $_POST['translate'] ? '1' : '0'; ?></label></td>	
+					<td><label  class="control-label">1</label></td>	
 				</tr>
 
 				<tr>
 					<td><label  class="control-label">Dictionary</label> </td>
-					<td><label  class="control-label"> <?php echo $_POST['dictionary'] ? '1' : '0'; ?></label></td>	
+					<td><label  class="control-label">0</label></td>	
 				</tr>
 
 				<tr>
 					<td><label  class="control-label">Spellchecker</label> </td>
-					<td><label  class="control-label"> <?php echo $_POST['spellchecker'] ? '1' : '0'; ?></label></td>	
+					<td><label  class="control-label">0</label></td>	
 				</tr>
 
 				<tr>
 					<td><label  class="control-label">Glossary</label> </td>
-					<td><label  class="control-label"> <?php echo $_POST['glossary'] ? '1' : '0'; ?></label></td>	
+					<td><label  class="control-label">0</label></td>	
 				</tr>
 
 				<tr>
 					<td><label  class="control-label">Feature/incubator</label> </td>
-					<td><label  class="control-label"> <?php echo $_POST['f_or_i'] ? '1' : '0'; ?></label></td>	
+					<td><label  class="control-label">Feature</label></td>	
 				</tr>
 			</table>
 		</div>	
@@ -375,8 +377,12 @@
 					alert('Enter ISO code of Language');
 				}
 				else{
-					//$('form').submit();	
+					//$('form').submit();
+					console.log($('#langcode_iso').val());
+					$('#langcode_iso1').text($('#langcode_iso').val());	
+					$('#langcode_wmf1').text($('#langcode_wmf').val());
 					$('#myModal').modal('show'); 
+					
 				}
 			})
 

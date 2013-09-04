@@ -11,7 +11,7 @@
 	$query = $_POST['query'];
 
 	//for featured and incubator languages
-	$result = mysql_query("SELECT * FROM $tableName where f_or_i='1'",$con);          //query
+	$result = mysql_query("SELECT * FROM $tableName where f_or_i='1'",$con);
 	$i = 0;
 	while ($result1 = mysql_fetch_assoc($result)) {
 		$i = $i + 1;
@@ -50,6 +50,8 @@
 	<link rel="stylesheet" type="text/css" href="css/boxed.css">
 	<link rel="stylesheet" type="text/css" href="jquery.ime/css/jquery.ime.css"/>
 	<link rel="stylesheet" type="text/css" href="css/example.css">
+	<link rel="stylesheet" type="text/css" href="css/menusearch.css">
+
 	
 	<script type="text/javascript" src="js/hogan.js"></script>
 	<script type="text/javascript" src="js/jquery-1.10.2-min.js"></script>
@@ -58,7 +60,7 @@
 	<script type="text/javascript" src="jquery.ime/src/jquery.ime.js"></script>
 	<script type="text/javascript" src="jquery.ime/src/jquery.ime.selector.js"></script>
 	<script type="text/javascript" src="jquery.ime/src/jquery.ime.preferences.js"></script>
-	<script typpe="text/javascript" src="jquery.ime/src/jquery.ime.inputmethods.js"></script>
+	<script type="text/javascript" src="jquery.ime/src/jquery.ime.inputmethods.js"></script>
 	<script type="text/javascript" src="js/typeahead.js"></script>
 	<script type="text/javascript" src="js/langlist.js"></script>
 	<script type="text/javascript" src="js/filter.js"></script>
@@ -78,6 +80,7 @@
 	<div class='well'>
 		<div class='row-fluid'>
 			<div class='span4' id=''>
+				Line visualization
 			</div>
 		</div>
 	</div>
@@ -187,75 +190,6 @@
 
 				</div>
 		</div>
-<!--
-		<div class='control-group'>
-		<label class="checkbox inline">
-  			<input type="checkbox" id="jquery_ime" value="jquery_ime"> jquery.ime
-		</label>
-		</div>
-		
-		<div class='control-group'>
-		<label class="checkbox inline">
-  			<input type="checkbox" id="webfonts" value="webfonts"> Webfonts
-		</label>
-		</div>
-		
-		<div class='control-group'>
-		<label class="checkbox inline">
-  			<input type="checkbox" id="jquery_webfonts" value="jquery_webfonts"> jquery.webfonts
-		</label>
-		</div>
-
-		<div class='control-group'>
-		<label class="checkbox inline">
-  			<input type="checkbox" id="i18n_mw_core" value="i18n_mw_core"> i18n mw core
-		</label>
-		</div>
-
-		<div class='control-group'>
-		<label class="checkbox inline">
-  			<input type="checkbox" id="jquery_i18n" value="jquery_i18n"> jquery.i18n
-		</label>
-		</div>
-
-		<div class='control-group'>
-		<label class="checkbox inline">
-  			<input type="checkbox" id="jquery_uls" value="jquery_uls"> jquery.uls
-		</label>
-		</div>
-
-		<div class='control-group'>
-		<label class="checkbox inline">
-  			<input type="checkbox" id="translate" value="translate"> Translate
-		</label>
-		</div>
-
-		<div class='control-group'>
-		<label class="checkbox inline">
-  			<input type="checkbox" id="dictionary" value="dictionary"> Dictionary
-		</label>
-		</div>
-
-		<div class='control-group'>
-		<label class="checkbox inline">
-  			<input type="checkbox" id="spellchecker" value="spellchecker"> Spellchecker
-		</label>
-		</div>
-
-		<div class='control-group'>
-		<label class="checkbox inline">
-  			<input type="checkbox" id="glossary" value="glossary"> Glossary
-		</label>
-		</div>
-
-		<div class='control-group'>
-		<label class="checkbox inline">
-  			<input type="checkbox" id="f_or_i" value="f_or_i"> Feature
-		</label>
-		</div>
-	</div>
--->
-
 
 	<div class='span6' id=''>
 		<div id="loader" align="center">
@@ -267,15 +201,14 @@
 		</div>
 	</div>
 
-	<div class="span3 row-fluid">
-		<div class="span12 well">
-			<div class='span4' id='langcount'>
-			</div>
+	<div class="span3 ">
+		<div class=" well" id='langcount'>
+			
 		</div>
-		<div class="span12 well">
-			Preview detail
+		<div class=" well">
+			PIE visualization
 		</div>
-		<div class="span12 well">
+		<div class=" well">
 			<div>
 				Languages with projects
 				<?php echo $feature ?>
