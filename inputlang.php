@@ -374,14 +374,16 @@
 
 			$('#submit').click(function(){
 				if ( $('#langcode_iso').val() == '' ) {
+					console.log($('#langcode_iso').val());
 					alert('Enter ISO code of Language');
 				}
-				else if ($('#langcode_wmf').val() == ''){
+				else if ( $('#langcode_wmf').val() == ''){
+					console.log('1');
 					alert('Enter WMF code of Language');
 				}
 				else{
 					//$('form').submit();
-					console.log($('#langcode_iso').val());
+					console.log($('#langcode_wmf').val());
 					$('#langcode_iso1').text($('#langcode_iso').val());	
 					$('#langcode_wmf1').text($('#langcode_wmf').val());
 					$('#myModal').modal('show'); 
