@@ -376,6 +376,9 @@
 				if ( $('#langcode_iso').val() == '' ) {
 					alert('Enter ISO code of Language');
 				}
+				else if ($('#langcode_wmf').val() == ''){
+					alert('Enter WMF code of Language');
+				}
 				else{
 					//$('form').submit();
 					console.log($('#langcode_iso').val());
