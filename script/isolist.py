@@ -25,5 +25,9 @@ while data.find(s) != -1:
 	print [iso,engname]
 	datalist.append([iso,engname])
 
-#print datadict
-#print datalist
+print datadict
+print datalist
+
+json = json.dumps(datadict,ensure_ascii=False, indent=4, separators=(',', ': '))
+f = open('../data/isolist.json','w')
+f.write(json)
