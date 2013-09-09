@@ -22,11 +22,7 @@ while data.find(s) != -1:
 	engname = temp[:temp.find('</td>')]
 	data = data[data.find(s)+ len(s) :]
 	datadict[iso] = engname
-	print [iso,engname]
 	datalist.append([iso,engname])
-
-print datadict
-print datalist
 
 json = json.dumps(datadict,ensure_ascii=False, indent=4, separators=(',', ': '))
 f = open('../data/isolist.json','w')
