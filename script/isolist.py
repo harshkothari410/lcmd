@@ -20,9 +20,13 @@ while data.find(s) != -1:
 	datadict[iso] = engname
 	datalist.append(iso)
 
+<<<<<<< HEAD
 data = json.dumps(datalist,ensure_ascii = False, indent = 4, separators = (',', ': '))
 
 json = json.dumps(datadict,ensure_ascii = False, indent = 4, separators = (',', ': '))
+=======
+data = json.dumps(datalist,ensure_ascii=False, indent=4, separators=(',', ': '))
+>>>>>>> 406a5a51e3fba01bcf6855e4b4f5d2cfc5cb7b18
 
 f = open('../data/isolist.json','w')
 f.write(json)
