@@ -34,7 +34,7 @@
 	<script type="text/javascript" src="jquery.ime/src/jquery.ime.preferences.js"></script>
 	<script type="text/javascript" src="jquery.ime/src/jquery.ime.inputmethods.js"></script>
 	<script type="text/javascript" src="js/typeahead.js"></script>
-	<script type="text/javascript" src='js/langsearch.js'></script>
+	<script type="text/javascript" src="js/isosearch.js"></script>
 
 </head>
 
@@ -56,7 +56,12 @@
 			<div class="control-group">
 				<label  class="control-label">Languag Code (ISO)</label>
 				<div class="controls">
+						<div class="example example-twitter-oss">
+							<input class="typeahead" id="typeahead" type="text" placeholder="Language Code (ISO)" >
+						</div>
+					<!--
 					<input type="text" class="input-large" id="langcode_iso" required name="langcode_iso" required data-trigger='focus' data-title="ISO - Code"  data-placement='right' data-content="Check the ISO code of language here <a href='http://www.loc.gov/standards/iso639-2/php/code_list.php' target='_blank'>ISO Code list" data-html='true'>
+					-->
 				</div>
 			</div>
 
