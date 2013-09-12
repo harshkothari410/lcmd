@@ -57,7 +57,7 @@
 				<label  class="control-label">Languag Code (ISO)</label>
 				<div class="controls">
 						<div class="example example-twitter-oss">
-							<input class="typeahead" id="typeahead" type="text" placeholder="Language Code (ISO)" >
+							<input class="typeahead" id="typeahead" type="text" placeholder="Language Code (ISO)" required name="langcode_iso" required data-trigger='focus' data-title="ISO - Code"  data-placement='right' data-content="Check the ISO code of language here <a href='http://www.loc.gov/standards/iso639-2/php/code_list.php' target='_blank'>ISO Code list" data-html='true'>
 						</div>
 					<!--
 					<input type="text" class="input-large" id="langcode_iso" required name="langcode_iso" required data-trigger='focus' data-title="ISO - Code"  data-placement='right' data-content="Check the ISO code of language here <a href='http://www.loc.gov/standards/iso639-2/php/code_list.php' target='_blank'>ISO Code list" data-html='true'>

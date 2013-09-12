@@ -9,13 +9,30 @@ $(function(){
 	});
 
 	$('.typeahead').on('typeahead:autocompleted', function (e, datum) {
+		flag = langCheck( datum.value );
 		isoEngname( datum.value );
 	});
 
 	$('.typeahead').on('typeahead:selected', function (e, datum) {
+		flag = langCheck( datum.value );
 		isoEngname( datum.value );
 	});
 })
+
+function langCheck(iso) {
+	$.ajax({
+		url: '/lib/isocheck.php',
+		type: 'POST',
+		dataType: 'json',
+		data: {isoName : iso},
+		success : function(data){
+			console.log(data);
+		}
+		error : function(data){
+			console.log(data);
+		}
+	})	
+}
 
 function isoEngname(iso) {
 	console.log(iso);
