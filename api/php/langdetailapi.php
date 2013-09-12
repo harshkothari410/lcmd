@@ -10,16 +10,20 @@
 
 	$var = $_GET['query'];
 
-	$result = mysql_query("SELECT * FROM $tableName where langname_eng = '$var'",$con);          //query
+	if ($var != null) {
+		$result = mysql_query("SELECT * FROM $tableName where langname_eng = '$var'",$con); 
+	}
+	else{
+		$result = mysql_query("SELECT * FROM $tableName", $con);
+	}
+
 	$i = 0;
 
 	while ($result1 = mysql_fetch_assoc($result)) {
-		
 		$array[] = $result1;
-		//$array = 8;
 	}
 
 	$json = json_encode($array);
-	//echo $json;
+	#echo $json;
 	echo isset($_GET['callback']) ? "{$_GET['callback']}($json)" : $json;
 ?>
