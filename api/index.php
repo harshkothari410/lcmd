@@ -24,6 +24,7 @@
 	<script type="text/javascript" src="../jquery.ime/src/jquery.ime.inputmethods.js"></script>
 	<script type="text/javascript" src="../js/typeahead.js"></script>
 	<script type="text/javascript" src='../js/langsearch.js'></script>
+	<script type="text/javascript" src="api.js"></script>
 
 </head>
 
@@ -33,6 +34,58 @@
 	</div>
 
 	<div class="container-fluid">
-		
+		<div class="row-fluid">
+		<div class="span3">
+		<label>Format</label>
+		<select>
+			<option>json</option>
+			<option>xml</option>
+			<option>dump</option>
+		</select>
+	</div>
+
+	<div class="span3">
+		<label>Query</label>
+		<select id="query">
+			<option>language</option>
+			<option>tool</option>
+		</select>
+	</div>
+	
+	<div class="span3" id="parameter">
+		<div id="tool">
+			<label>Tools</label>
+			<select multiple="multiple" id="tools">
+				<option>jquery.ime</option>
+				<option>jquery.uls</option>
+				<option>jquery.i18n</option>
+				<option>ULS Webfonts</option>
+				<option>Narayam</option>
+				<option>Webfonts</option>
+				<option>Translate</option>
+				<option>Dictionary</option>
+				<option>SpellChecker</option>
+				<option>Glossary</option>
+			</select>
+		</div>
+
+		<div id="language">
+			<label>Language</label>
+			<select id="languages">
+			</select>
+		</div>
+	</div>
+
+	<div class="span3">
+		<a class="btn btn-primary btn-block btn-large" id="req_button" href='#'>Request</a>
+	</div>
+	</div>
+	</div>
+
+	<div class="container-fluid">
+		<h1>Query Formation</h1>
+		<pre id="query_preview">
+			Harsh
+		</pre>
 	</div>
 </body>
