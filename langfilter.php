@@ -105,11 +105,11 @@
 					<!-- Heading 1 -->
 					<div class="accordion-group">
 						<div class="accordion-heading">
-							<a class="accordion-toggle" data-toggle="collapse" data-parent="#" href="#">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#" href="#uls">
 								Universal Language Selector
 							</a>
 						</div>
-						<div id="uls" class="accordion-body collapse in">
+						<div id="uls" class="accordion-body collapse">
 							<div class="accordion-inner">						
 								<label class="checkbox inline">
 									<input type="checkbox" id="webfonts" value="webfonts"> webfonts
@@ -134,11 +134,11 @@
 					<!-- Heading 2 -->
 					<div class="accordion-group">
 						<div class="accordion-heading">
-							<a class="accordion-toggle" data-toggle="collapse" data-parent="#" href="#">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#" href="#milkshake">
 								Project Milkshake
 							</a>
 						</div>
-						<div id="" class="accordion-body collapse in">
+						<div id="milkshake" class="accordion-body collapse">
 							<div class="accordion-inner">						
 								<label class="checkbox inline">
 									<input type="checkbox" id="jquery_ime" value="jquery_ime"> Input Method Library
@@ -168,11 +168,11 @@
 					<!-- Heading 3 -->
 					<div class="accordion-group">
 						<div class="accordion-heading">
-							<a class="accordion-toggle" data-toggle="collapse" data-parent="#" href="#">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#" href="#legacy">
 								Legacy Extension
 							</a>
 						</div>
-						<div id="" class="accordion-body collapse in">
+						<div id="legacy" class="accordion-body collapse">
 							<div class="accordion-inner">						
 								<label class="checkbox inline">
 									<input type="checkbox" id="narayam" value="narayam"> Narayam
