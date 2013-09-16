@@ -37,7 +37,8 @@
 		<div class="row-fluid">
 		<div class="span3">
 		<label>Format</label>
-		<select>
+		<select id="format">
+			<option>Select Format</option>
 			<option>json</option>
 			<option>xml</option>
 			<option>dump</option>
@@ -47,6 +48,7 @@
 	<div class="span3">
 		<label>Query</label>
 		<select id="query">
+			<option>Select Query</option>
 			<option>language</option>
 			<option>tool</option>
 		</select>
@@ -85,7 +87,6 @@
 	<div class="container-fluid">
 		<h1>Query Formation</h1>
 		<pre id="query_preview">
-			Harsh
 		</pre>
 	</div>
 </body>
