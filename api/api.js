@@ -50,12 +50,30 @@ $(function(){
 					tool_query =  tool_query + '|' + tools[i];
 				}
 			}
-			final_query = '/languageapi.php?query='+ query+"&tool="+tool_query +'&format='+ format;
+			final_query = 'languageapi.php?query='+ query+"&tool="+tool_query +'&format='+ format;
 		}
 		else{
-			final_query = '/languageapi.php?query='+ query+"&language="+language +'&format='+ format;
+			final_query = 'languageapi.php?query='+ query+"&language="+language +'&format='+ format;
 		}
 
-		$('#query_preview').text(final_query);
+		$('#query_preview').text('/'+final_query);
+
+
+		$.ajax({
+			url: final_query,
+			type: 'GET',
+			dataType: '',
+		})
+		.done(function(data) {
+			console.log("success");
+			$('#result_preview').text(data);
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
 	});
 })

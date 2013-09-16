@@ -89,4 +89,11 @@
 		<pre id="query_preview">
 		</pre>
 	</div>
+
+	<div class="container-fluid">
+		<h1>Query Result</h1>
+		<pre id="result_preview">
+			
+		</pre>
+	</div>
 </body>
