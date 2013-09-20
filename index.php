@@ -41,25 +41,60 @@
 		}
 	?>
 
-	<div class="hero-unit">
-		<h1>LCM - Dashboard</h1>
+	<div class="container-fluid hero-unit">
+		<h1>Language Coverage Matrix Dashboard</h1>
 		<p>The Language Coverage Matrix dashboard would help automate the information about language support provided by the Language Engineering team</p>
+		<!--
 		<p>
 			<a class="btn btn-primary btn-large">
 				Learn more
 			</a>
 		</p>
+	-->
 	</div>
-	<div class="container-fluid">
+	<div class="container-fluid well">
 		<div class="row-fluid">
-			<div class="span8" align='justify'>
-				The Language Coverage Matrix dashboard would help automate the information about language support provided by the Language Engineering team for e.g. key maps, web fonts, translation, language selector, i18n support for gender, plurals, grammar rules. The LCM would display this information as well as provide visualization graphs of language coverage using various search criteria such as tools or languages. I will build this web based dashboard using Javascript libraries integrated with MySQL to manage the data. I found this project very useful for language engineering team since wikipedia supports more than 300 languages. This tool will help them analyse the details of various available features of individual language. The Language Engineering team can efficiently prioritize and include some missing features , that is the features which are not currently available particular language. The overall impact of this project will lead to an efficient and enhanced user experience for Wikis.
+			<div class="span2">
+				Language Search
 			</div>
-			<div class="span4">
-				<h4> Latest Update </h4>
-				Latest news feed
+			<div class="span4" >
+				<div class="example example-twitter-oss" id="noanimate">
+					<input class="typeahead" id="typeahead" type="text" placeholder="Language Search" >
+				</div>
 			</div>
+
+			<label class="checkbox inline span2 center">
+				<input type="checkbox" id="webfonts" value="webfonts"> Input Methods
+			</label>
+
+			<label class="checkbox inline span2">
+				<input type="checkbox" id="webfonts" value="webfonts"> webfonts
+			</label>
+
+			<label class="checkbox inline span2">
+				<input type="checkbox" id="webfonts" value="webfonts"> Internationlization Library
+			</label>
 		</div>
+
+<!--
+		<div class="row-fluid">
+			<label class="checkbox inline span4 center">
+				<input type="checkbox" id="webfonts" value="webfonts"> Input Methods
+			</label>
+
+			<label class="checkbox inline span4">
+				<input type="checkbox" id="webfonts" value="webfonts"> webfonts
+			</label>
+
+			<label class="checkbox inline span4">
+				<input type="checkbox" id="webfonts" value="webfonts"> Internationlization Library
+			</label>
+		</div>
+-->
+	</div>
+
+	<div class="container-fluid well">
+		This is language show section
 	</div>
 </body>
 </html>

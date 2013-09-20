@@ -35,7 +35,7 @@ $(function () {
 
 	$('.typeahead').on('typeahead:autocompleted', function (e, datum) {
 		//console.log(e);
-		if ($('.typeahead').parent().parent().attr('id') == 'noanimate') {
+		if ($('.typeahead').parent().parent().attr('id') == 'noanimate' ) {
 
 		}
 		else {
