@@ -42,6 +42,8 @@ $(function () {
 			hideDataAnimation();	
 		}
 		//console.log(datum.name);
+		$('#data').hide('slow');
+		$('#loader').show('slow');
 		languageDetail( datum.name );
 		//$('.typeahead').val(datum.name + ' - ' + datum.autonym + ' - ' + datum.iso);
 	});
