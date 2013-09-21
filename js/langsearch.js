@@ -53,6 +53,8 @@ $(function () {
 		else {
 			hideDataAnimation();	
 		}
+		$('#data').hide('slow');
+		$('#loader').show('slow');
 		languageDetail( datum.name );
 		//console.log(datum.name);
 		//$('.typeahead').val(datum.name + ' - ' + datum.autonym + ' - ' + datum.iso);
@@ -180,6 +182,8 @@ function fillData(data) {
 			$('#imedetail').text('No IME is available');
 		}
 	});	
+	$('#langdetailshow').show("slow");
+	$('#loader').hide('slow');
 }
 
 /*

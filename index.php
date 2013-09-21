@@ -84,24 +84,20 @@
 		</div>
 	</div>
 
-<!--
-		<div class="row-fluid">
-			<label class="checkbox inline span4 center">
-				<input type="checkbox" id="webfonts" value="webfonts"> Input Methods
-			</label>
-
-			<label class="checkbox inline span4">
-				<input type="checkbox" id="webfonts" value="webfonts"> webfonts
-			</label>
-
-			<label class="checkbox inline span4">
-				<input type="checkbox" id="webfonts" value="webfonts"> Internationlization Library
-			</label>
-		</div>
--->
 	</div>
 
 	<div class="container-fluid">
+		<div class="row-fluid">
+		<?php
+			if (isset($_SESSION['username'])) {
+				require 'lib/langdetailadmin.php';
+			}
+			else{
+				require 'lib/langdetail.php';
+			}
+		?>
+		</div>
+
 	<div class='row-fluid' id=''>
 		<div id="loader" align="center">
 			<img src="img/ajax-loader.gif" align="center">
@@ -113,5 +109,11 @@
 		</div>
 	</div>
 	</div>
+
+	<script type="text/javascript">
+		$(function(){
+			$('#langdetailshow').hide();
+		})
+	</script>
 </body>
 </html>

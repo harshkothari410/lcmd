@@ -1,14 +1,4 @@
-<div class="container-fluid" style="margin-top:20px;">
-	<div class="row-fluid">
-		<div class="span6" align="center">
-			<div class="example example-twitter-oss" id="noanimate">
-				<input class="typeahead" id="typeahead" type="text" placeholder="Language Search" >
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="container-fluid">
+<div class="container-fluid" id="langdetailshow">
 	<div class='row-fluid'>
 		<div class="span6">			
 			<div class='span12' id='boxed'>
