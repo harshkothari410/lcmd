@@ -26,12 +26,34 @@ function display_lang(data){
 	$('table').append('<tr>');
 		for(var i=0; i < data.length ; i++){
 			var tr = $("table tr:last");
-			if(tr.find('td').length == 2){
+			if(tr.find('td').length == 3){
 				$('table').append('<tr>');
 				var tr = $("table tr:last");
 			}
 			$(tr).append(values(data[i]));
 		} 
+		/*
+		for (var i = 0; i < data.length; i++) {
+			$('#data').append(valuePrint(data[i]));
+		};
+		*/
+
+}
+
+function valuePrint(data){
+	var div = "<div class='span4 row-fluid well' id='boxed' align='center'>" + 
+				"<a href='language.php?" + data[3]+"'>" + 
+			 "<div class='row-fluid'>"+
+			 "<div class='span4'>"+
+			 "<p>" + data[0] + "</p>"+
+			 "<p class='muted'>" + data[1] + "</p>"+
+			 "</div>"+
+			 "<div class='span8'>"+
+			 "<p class='text-error'><strong>" + data[2] + "</strong></p>"+
+			 "<p class='text-info'>" + data[3] + "</p>"+
+			 "</div></a>"+
+			"</div>";
+	return div;
 }
 
 function values(data){
