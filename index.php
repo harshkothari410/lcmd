@@ -53,7 +53,7 @@
 		</p>
 	-->
 	</div>
-	<div class="container-fluid well ">
+	<div class="container-fluid well">
 		<div class="row-fluid">
 
 			<div class="span6 row-fluid">
@@ -86,7 +86,10 @@
 
 	</div>
 
-	<div class="container-fluid">
+	<div class="container-fluid" id="">
+			<div class="row-fluid span2" id="back_button" style="display:none;margin-bottom:10px;">
+				<button class="btn btn-primary">Back to All Languages</button>
+			</div>
 		<div class="row-fluid">
 		<?php
 			if (isset($_SESSION['username'])) {
@@ -98,21 +101,34 @@
 		?>
 		</div>
 
+
+
 	<div class='row-fluid' id=''>
 		<div id="loader" align="center">
 			<img src="img/ajax-loader.gif" align="center">
 		</div>
 		<div class="row-fluid class12" id="data">
+			<!--
 			<table class='table table-striped table-bordered' id='langlist'>
 			</table>
-
+-->
 		</div>
 	</div>
 	</div>
 
 	<script type="text/javascript">
 		$(function(){
-			$('#langdetailshow').hide();
+			//$('#langdetailshow').hide();
+			$('.ind_lang').click(function(event) {
+				$this = $(this);
+				console.log($this.attr('id'));
+				languageDetail($this.attr('id'));
+			});
+
+			$('#back_button').click(function(){
+				$('#langdetailshow,#back_button').hide(1000);
+				$('#data').show(1500);
+			});
 		})
 	</script>
 </body>

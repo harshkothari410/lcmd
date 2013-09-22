@@ -1,4 +1,4 @@
-<div class="container-fluid" id="langdetailshow">
+<div class="container-fluid" id="langdetailshow" style="display:none;">
 	<div class='row-fluid'>
 		<div class="span6">			
 			<div class='span12' id='boxed'>

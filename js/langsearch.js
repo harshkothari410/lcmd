@@ -42,9 +42,8 @@ $(function () {
 			hideDataAnimation();	
 		}
 		//console.log(datum.name);
-		$('#data').hide();
-		$('#loader').show();
-		languageDetail( datum.name );
+		$('#data').hide(1000);
+		languageDetail( datum.iso );
 		//$('.typeahead').val(datum.name + ' - ' + datum.autonym + ' - ' + datum.iso);
 	});
 
@@ -56,7 +55,7 @@ $(function () {
 			hideDataAnimation();	
 		}
 		$('#data').hide(1000);
-		languageDetail( datum.name );
+		languageDetail( datum.iso );
 		//console.log(datum.name);
 		//$('.typeahead').val(datum.name + ' - ' + datum.autonym + ' - ' + datum.iso);
 	});
@@ -102,6 +101,7 @@ function hideDataAnimation () {
 * output : fillData function call with response data
 */
 function languageDetail(lang){
+	$('#data').hide(1000);
 	var returnData;
 	$.ajax({
 		url: 'lib/langsearchajax.php',
@@ -183,7 +183,7 @@ function fillData(data) {
 			$('#imedetail').text('No IME is available');
 		}
 	});	
-	$('#langdetailshow').show(1500);
+	$('#langdetailshow,#back_button').show(1500);
 
 }
 
