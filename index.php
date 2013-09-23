@@ -82,6 +82,16 @@
 				<input type="checkbox" id="jquery_i18n" value="jquery_i18n"><b> Internationlization Library</b>
 			</label>
 		</div>
+
+		<div class="span12 row-fluid" style="margin-top:10px;">
+			<label class="radio inline span2">
+				<input type="radio" id="" value="" checked><b>List</b>
+			</label>
+
+			<label class="radio inline span2">
+				<input type="radio" id="" value=""><b>Graphics</b>
+			</label>
+		</div>
 	</div>
 
 	</div>

@@ -1,9 +1,9 @@
-/*
-* js file for loading information of searched language
-* @author - Harsh Kothari (harshkothari410@gmail.com)
-* @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
-* global $:false (for jshint)
-*/
+/**
+ * js file for loading information of searched language
+ * @author - Harsh Kothari (harshkothari410@gmail.com)
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * global $:false (for jshint)
+ */
 /*global $:false */
 $(function () {
 	"use strict";
