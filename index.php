@@ -128,8 +128,7 @@
 
 	<div class="container-fluid well" id="graphics">
 		<pre>
-		This Page will be created by WMF employee Miss Sucheta Ghoshal.
-	</pre>
+		This Page will contain Visulizations
 	</div>
 
 	<script type="text/javascript">
