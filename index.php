@@ -126,9 +126,9 @@
 	</div>
 	</div>
 
-	<div class="container-fluid well" id="graphics">
+	<div class="container-fluid well" id="graphics" style="display:none;">
 		<pre>
-		This Page will contain Visulizations
+		This Page will contain Visulizations</pre>
 	</div>
 
 	<script type="text/javascript">

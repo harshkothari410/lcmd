@@ -86,16 +86,16 @@ function filterdata(value){
 		type : 'POST',
 		async : 'false',
 		success : function(data){
-			
+			$('#data').show();
+			$('#loader').hide();
+			langCount(data);
 		},
 		error : function(data){
 			$('#langcount').html('<h3 class="text-info">' + (data.length)+ ' Languages </h3>');
 			//display_lang(data);
 		},
 		complete : function(data){
-			$('#data').show();
-			$('#loader').hide();
-			langCount(data);
+			
 		}
 	})
 }
@@ -120,6 +120,7 @@ function filterLabel(){
 //Showing number of language, display_lang function call, label show
 function langCount(data){
 	$('#langlist > div').remove();
+	$('#data > div').remove();
 		if(data != null){
 			display_lang(data);
 			$('#langcount').html('<h3 class="text-info">' + (data.length)+ ' Languages </h3>');
