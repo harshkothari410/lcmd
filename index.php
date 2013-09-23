@@ -85,18 +85,18 @@
 
 		<div class="span12 row-fluid" style="margin-top:10px;">
 			<label class="radio inline span2">
-				<input type="radio" id="" value="" checked><b>List</b>
+				<input type="radio" id="list_graphics" name="list_graphics" value="list" checked><b>List</b>
 			</label>
 
 			<label class="radio inline span2">
-				<input type="radio" id="" value=""><b>Graphics</b>
+				<input type="radio" id="list_graphics" name="list_graphics" value="graphics"><b>Graphics</b>
 			</label>
 		</div>
 	</div>
 
 	</div>
 
-	<div class="container-fluid" id="">
+	<div class="container-fluid" id="list">
 			<div class="row-fluid span2" id="back_button" style="display:none;margin-bottom:10px;">
 				<button class="btn btn-primary">Back to All Languages</button>
 			</div>
@@ -113,7 +113,7 @@
 
 
 
-	<div class='row-fluid' id=''>
+	<div class='row-fluid list' id=''>
 		<div id="loader" align="center">
 			<img src="img/ajax-loader.gif" align="center">
 		</div>
@@ -124,6 +124,12 @@
 -->
 		</div>
 	</div>
+	</div>
+
+	<div class="container-fluid well" id="graphics">
+		<pre>
+		This Page will be created by WMF employee Miss Sucheta Ghoshal.
+	</pre>
 	</div>
 
 	<script type="text/javascript">
@@ -138,6 +144,19 @@
 			$('#back_button').click(function(){
 				$('#langdetailshow,#back_button').hide(1000);
 				$('#data').show(1500);
+			});
+
+			$("input[type='radio']").change(function(event) {
+				$this = $(this);
+				if ($this.val() == 'list'){
+					$('#graphics').hide(1000);
+					$('#list').show(1500);
+				}
+				else{
+					$('#list').hide(1000);
+					$('#graphics').show(1500);
+				}
+				//console.log($this.val());
 			});
 		})
 	</script>
