@@ -1,3 +1,9 @@
+/**
+ * js file for language show
+ * @author - Harsh Kothari (harshkothari410@gmail.com)
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * global $:false (for jshint)
+ */
 $(function(){
 	$('#data').hide();
 	$('#loader').show();

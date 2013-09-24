@@ -89,6 +89,9 @@ function filterdata(value){
 			$('#data').show();
 			$('#loader').hide();
 			langCount(data);
+			var a = data.length;
+			var b = 462 - a;
+			tests({'Yes' : a,'No':b});
 		},
 		error : function(data){
 			$('#langcount').html('<h3 class="text-info">' + (data.length)+ ' Languages </h3>');

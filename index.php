@@ -29,6 +29,7 @@
 	<script type="text/javascript" src="js/langlist.js"></script>
 	<script type="text/javascript" src="js/filter.js"></script>
 	<script type="text/javascript" src='js/langsearch.js'></script>
+	
 
 </head>
 <body>
@@ -75,7 +76,7 @@
 			</label>
 
 			<label class="checkbox inline span4">
-				<input type="checkbox" id="webfonts" value="webfonts"><b> webfonts</b>
+				<input type="checkbox" id="jquery_webfonts" value="jquery_webfonts"><b> webfonts</b>
 			</label>
 
 			<label class="checkbox inline span4">
@@ -127,8 +128,8 @@
 	</div>
 
 	<div class="container-fluid well" id="graphics" style="display:none;">
-		<pre>
-		This Page will contain Visulizations</pre>
+		<div class="row-fluid" id="graph_data" align="center">			
+		</div>
 	</div>
 
 	<script type="text/javascript">
@@ -163,7 +164,11 @@
 				event.preventDefault();
 				$('#webfont_show').show();
 			})
+
+			
 		})
 	</script>
+	<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+	<script type="text/javascript" src="js/pi.js"></script>
 </body>
 </html>
