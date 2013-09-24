@@ -55,7 +55,7 @@ function display_lang(data){
 
 function valuePrint(data){
 	var div = "<div class='span4 row-fluid well' id='boxed' align='center'>" + 
-				"<a id='"+data[1]+"' href='#' class='ind_lang'>" + 
+			 "<a id='"+data[1]+"' href='#' class='ind_lang'>" + 
 			 "<div class='row-fluid'>"+
 			 "<div class='span4'>"+
 			 "<p>" + data[0] + "</p>"+

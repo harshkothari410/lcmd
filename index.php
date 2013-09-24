@@ -134,11 +134,11 @@
 	<script type="text/javascript">
 		$(function(){
 			//$('#langdetailshow').hide();
-			$('.ind_lang').click(function(event) {
-				$this = $(this);
+			$( document ).on( 'click', '.ind_lang', function () {
+    			$this = $(this);
 				console.log($this.attr('id'));
 				languageDetail($this.attr('id'));
-			});
+    		} ); 
 
 			$('#back_button').click(function(){
 				$('#langdetailshow,#back_button').hide(1000);
