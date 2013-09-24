@@ -135,6 +135,7 @@
 		$(function(){
 			//$('#langdetailshow').hide();
 			$( document ).on( 'click', '.ind_lang', function () {
+				event.preventDefault();
     			$this = $(this);
 				console.log($this.attr('id'));
 				languageDetail($this.attr('id'));
@@ -157,6 +158,11 @@
 				}
 				//console.log($this.val());
 			});
+
+			$(document).on('click','#webfont_link',function(event){
+				event.preventDefault();
+				$('#webfont_show').show();
+			})
 		})
 	</script>
 </body>

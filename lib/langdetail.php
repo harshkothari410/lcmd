@@ -85,7 +85,7 @@
 						</div>
 
 						<div class="accordion-inner">
-							<div class="span8">Input Methods</div>
+							<div class="span8"><a id="webfont_link" href="#">Input Methods</a></div>
 							<div class="" value="no" id="jquery_ime"></div>
 						</div>
 
@@ -165,6 +165,10 @@
 							<div class="span5" id="imedetail"></div>
 						</div>
 					</div>
+				</div>
+
+				<div style="display:none;" id="webfont_show">
+					<div class="well">Input Method Preview show</div>
 				</div>
 			</div>
 		</div>
