@@ -40,13 +40,20 @@ $(function(){
 
 		
 		
-		if($('#language').attr('style') == 'display: none; '){
+		if($('#language').is( ":hidden" ) == true){
+			console.log('harsh I am in');
 			tool_query = '';
 			for(var i=0;i<tools.length ; i++){
 				if(i==0){
+					if(tools[i] == 'ULS Webfonts'){
+						tools[i] = 'jquery_webfonts';
+					}
 					tool_query = tool_query + tools[i];
 				}
 				else{
+					if(tools[i] == 'ULS Webfonts'){
+						tools[i] = 'jquery_webfonts';
+					}
 					tool_query =  tool_query + '|' + tools[i];
 				}
 			}
@@ -56,6 +63,7 @@ $(function(){
 			final_query = 'languageapi.php?query='+ query+"&language="+language +'&format='+ format;
 		}
 
+		console.log(final_query);
 		$('#query_preview').text('/'+final_query);
 
 

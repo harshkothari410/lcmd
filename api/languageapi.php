@@ -47,15 +47,14 @@
 		$query = 'select * from langdetail';
 	
 		if(count($vars) > 0 && strlen($tool) > 2)
-			$query = 'select * from langdetail where '.$string;
-		//echo $query;
+		$query = 'select * from langdetail where '.$string;
 		$result = mysql_query($query,$con);	
 		$array = 0;
 		while ($result1 = mysql_fetch_assoc($result)) {
 			$array = $array + 1;
 		}
 
-		echo $array;
+		#echo $array;
 	}
 
 

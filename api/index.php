@@ -40,7 +40,6 @@
 		<select id="format">
 			<option>Select Format</option>
 			<option>json</option>
-			<option>xml</option>
 			<option>dump</option>
 		</select>
 	</div>
@@ -58,16 +57,16 @@
 		<div id="tool">
 			<label>Tools</label>
 			<select multiple="multiple" id="tools">
-				<option>jquery.ime</option>
-				<option>jquery.uls</option>
-				<option>jquery.i18n</option>
+				<option>jquery_ime</option>
+				<option>jquery_uls</option>
+				<option>jquery_i18n</option>
 				<option>ULS Webfonts</option>
-				<option>Narayam</option>
-				<option>Webfonts</option>
-				<option>Translate</option>
-				<option>Dictionary</option>
-				<option>SpellChecker</option>
-				<option>Glossary</option>
+				<option>narayam</option>
+				<option>webfonts</option>
+				<option>translate</option>
+				<option>dictionary</option>
+				<option>spellChecker</option>
+				<option>glossary</option>
 			</select>
 		</div>
 
