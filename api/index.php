@@ -95,4 +95,11 @@
 			
 		</pre>
 	</div>
+
+	<div class="container-fluid">
+		<h1>Example</h1>
+		<pre id="example">
+
+		</pre>
+	</div>
 </body>

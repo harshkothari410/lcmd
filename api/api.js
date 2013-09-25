@@ -70,6 +70,23 @@ $(function(){
 		$('#query_preview').text('/'+final_query);
 
 
+		var q = 
+		["$.ajax({",
+		"	url: http://192.252.213.68/lcmd/api/"+final_query+",",
+		"	type: 'GET',",
+		"	dataType: 'jsonp', //Use JSONP for cross domain data transfer",
+		"})",
+		".done(function(data) {",
+		"	//do whatever you want to do with data",
+		"})",
+		".fail(function() {",
+		"})",
+		".always(function() {",
+		"});"].join('\n');
+
+		$('#example').text(q);
+
+
 		$.ajax({
 			url: final_query,
 			type: 'GET',
