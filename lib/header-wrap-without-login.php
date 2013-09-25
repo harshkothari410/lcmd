@@ -12,8 +12,15 @@
 			<div class="nav-collapse collapse">	
 				<ul class="nav pull-right">
 					<li><a href="index.php">Home</a></li>
-					<li><a href="#">About Us</a></li>
-					<li><a href="langfilter.php">Languages</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" href="#" data-toggle="dropdown">About Project<strong class="caret"></strong></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Information</a></li>
+							<li><a>License</a></li>
+							<li><a>Project Source</a></li>
+						</ul>
+					</li>
+					<li><a href="api/index.php">API</a></li>
 					<li class="dropdown">
 						<a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
 						<div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
