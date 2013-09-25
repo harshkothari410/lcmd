@@ -84,7 +84,7 @@
 
 	<div class="container-fluid hero-unit">
 		<h1>Language Coverage Matrix Dashboard</h1>
-		<p>The Language Coverage Matrix dashboard would help automate the information about language support provided by the Language Engineering team</p>
+		<p>The Language Coverage Matrix dashboard would help automate the information about language support provided by the Wikimedia Language Engineering team</p>
 		<!--
 		<p>
 			<a class="btn btn-primary btn-large">
