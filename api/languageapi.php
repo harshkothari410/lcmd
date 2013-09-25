@@ -48,7 +48,7 @@
 	
 		if(count($vars) > 0 && strlen($tool) > 2)
 			$query = 'select * from langdetail where '.$string;
-		echo $query;
+		//echo $query;
 		$result = mysql_query($query,$con);	
 		$array = 0;
 		while ($result1 = mysql_fetch_assoc($result)) {
