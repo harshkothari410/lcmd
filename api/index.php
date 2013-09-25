@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,6 +32,16 @@
 </head>
 
 <body>
+
+	<?php
+		if(isset($_SESSION['username'])){
+			include "../lib/header-wrap-with-login.php";
+		}
+		else{
+			include "../lib/header-wrap-without-login.php";
+		}
+	?>
+
 	<div class="container-fluid hero-unit">
 		<h1>Language API Console</h1>
 	</div>
