@@ -4,7 +4,6 @@ $(function(){
 		type: 'GETs',
 		dataType: 'json',
 		success : function(data){
-			//console.log(data[2]['langname_eng']);
 			for (var i = 0; i < data.length; i++) {
 				$('#languages').append('<option>' + data[i]['langname_eng'] + '</option>');
 			};
@@ -41,7 +40,6 @@ $(function(){
 		
 		
 		if($('#language').is( ":hidden" ) == true){
-			console.log('harsh I am in');
 			tool_query = '';
 			for(var i=0;i<tools.length ; i++){
 				if(i==0){
@@ -63,7 +61,6 @@ $(function(){
 			final_query = 'languageapi.php?query='+ query+"&language="+language +'&format='+ format;
 		}
 
-		console.log(final_query);
 		$('#query_preview').text('/'+final_query);
 
 
@@ -73,14 +70,11 @@ $(function(){
 			dataType: '',
 		})
 		.done(function(data) {
-			console.log("success");
 			$('#result_preview').text(data);
 		})
 		.fail(function() {
-			console.log("error");
 		})
 		.always(function() {
-			console.log("complete");
 		});
 		
 	});
