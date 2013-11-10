@@ -7,7 +7,7 @@
 	mysql_set_charset('utf8',$con);
 	$dbs = mysql_select_db($databaseName,$con);
 	mysql_query("SET NAMES 'utf8'", $con);
-	$query = 'select * from langdetail';
+	$query = 'select * from langdetail where wmf_proj_status=1';
 
 	$result = mysql_query($query,$con);
 
