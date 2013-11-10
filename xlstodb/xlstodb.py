@@ -102,7 +102,7 @@ for row_index in range(2,sheet.nrows): #sheet.nrows
     values = ( langcodeiso, langcodewmf, langname, langname_a, langcodehtml, macro_lang, wmf_pro_status, fallback_code, narayam, jquery_ime, webfonts, jquery_webfonts, i18n_mw_core, jquery_i18n, jquery_uls, translate1, dictionary, spellchecker, glossary ,froi)
     
     
-    if row_index == 100 or row_index == 358 or row_index == 361:
+    if row_index == 216 or row_index == 154 or row_index == 302 or row_index == 675 or row_index == 693:
         print sheet.cell(row_index,0).value 
         continue
     
