@@ -173,7 +173,6 @@
 
 	<script type="text/javascript">
 		$(function(){
-			//$('#langdetailshow').hide();
 			$( document ).on( 'click', '.ind_lang', function () {
 				event.preventDefault();
     			$this = $(this);
@@ -196,7 +195,6 @@
 					$('#list').hide(1000);
 					$('#graphics').show(1500);
 				}
-				//console.log($this.val());
 			});
 
 			$(document).on('click','#webfont_link',function(event){
