@@ -180,12 +180,14 @@
 				languageDetail($this.attr('id'));
     		} ); 
 
-			$('#back_button').click(function(){
-				$('#langdetailshow,#back_button').hide(1000);
-				$('#data').show(1500);
+			$( '#back_button' ).click( function () {
+				$('#langdetailshow,#back_button').fadeOut(300, function(){
+					$('#data').fadeIn(300);
+				});
+				
 			});
 
-			$("input[type='radio']").change(function(event) {
+			$( "input[type='radio']" ).change( function(event) {
 				$this = $(this);
 				if ($this.val() == 'list'){
 					$('#graphics').hide(1000);
@@ -205,11 +207,12 @@
 	</script>
 	<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
 	<script type="text/javascript" src="js/pi.js"></script>
-	<script type="text/javascript">
+
+ 	<script type="text/javascript">
 		var a = <?php echo $ime ?>;
 		var b = <?php echo $webfonts ?>;
 		var c = <?php echo $i18n ?>;
 		tests({'ime' : a,'webfonts':b,'i18n':c});
 	</script>
-</body>
+ </body>
 </html>
