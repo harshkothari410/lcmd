@@ -108,6 +108,7 @@
 			</div>
 		</div>
 
+		<div class="container-fluid" id="option-box">
 			<div class="span6 row-fluid">
 
 			<label class="checkbox inline span4" style="margin-left:10px;">
@@ -122,6 +123,7 @@
 				<input type="checkbox" id="jquery_i18n" value="jquery_i18n"><b>  Internationalization Library</b>
 			</label>
 		</div>
+	</div>
 
 		<div class="span12 row-fluid" style="margin-top:10px;">
 			<label class="radio inline span2">
