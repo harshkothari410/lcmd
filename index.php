@@ -125,7 +125,7 @@
 		</div>
 	</div>
 
-		<div class="span12 row-fluid" style="margin-top:10px;">
+		<div class="span12 row-fluid" style="margin-left:0;padding-left:2.5%;margin-top:10px;">
 			<label class="radio inline span2">
 				<input type="radio" id="list_graphics" name="list_graphics" value="list" checked><b>List</b>
 			</label>
@@ -139,8 +139,8 @@
 	</div>
 
 	<div class="container-fluid" id="list">
-			<div class="row-fluid span2" id="back_button" style="display:none;margin-bottom:10px;">
-				<button class="btn btn-primary">Back to All Languages</button>
+			<div id="back_button_div" class="row-fluid span2" style="display:none;margin-bottom:10px;">
+				<button id="back_button" class="btn btn-primary">Back to All Languages</button>
 			</div>
 		<div class="row-fluid">
 		<?php
@@ -183,7 +183,7 @@
     		} ); 
 
 			$( '#back_button' ).click( function () {
-				$('#langdetailshow,#back_button').fadeOut(300, function(){
+				$('#langdetailshow,#back_button_div').fadeOut(300, function(){
 					$('#data').fadeIn(300);
 				});
 				

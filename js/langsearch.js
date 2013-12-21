@@ -184,7 +184,7 @@ function fillData(data) {
 		}
 	});	
 	$('#data').fadeOut(300,function(){
-		$('#langdetailshow,#back_button').fadeIn(300);
+		$('#langdetailshow,#back_button_div').fadeIn(300);
 	})
 	
 }
