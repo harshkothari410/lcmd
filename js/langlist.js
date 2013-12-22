@@ -41,16 +41,16 @@ function display_lang(data){
 		} 
 		*/
 		var j = 0;
-		$('#data').append('<div id="data1" class="row-fluid"  align="center">');
+		//$('#data').append('<div id="data1" class="row-fluid"  align="center">');
 		for (var i = 0; i < data.length; i++) {
 			
 			if (j == 3){
-				$('#data').append('<div id="data1" class="row-fluid"  align="center">');
-				$('div#data1').last().append(valuePrint(data[i]));
+				//$('#data').append('<div id="data1" class="row-fluid"  align="center">');
+				$('#data').append(valuePrint(data[i]));
 				j = 0;
 			}
 			else{
-				$('div#data1').last().append(valuePrint(data[i]));	
+				$('#data').append(valuePrint(data[i]));	
 			}
 			//$('#data').append(valuePrint(data[i]));
 			j = j + 1;

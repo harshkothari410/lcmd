@@ -854,14 +854,16 @@
             hint: {
                 position: "absolute",
                 top: "0",
-                left: "0",
+                left: "2%",
                 borderColor: "transparent",
-                boxShadow: "none"
+                boxShadow: "none",
+                width: "85%"
             },
             query: {
                 position: "relative",
                 verticalAlign: "top",
-                backgroundColor: "transparent"
+                backgroundColor: "transparent",
+                width: "85%"
             },
             dropdown: {
                 position: "absolute",

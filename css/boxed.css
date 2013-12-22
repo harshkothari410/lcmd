@@ -55,3 +55,14 @@
 #test2{
 	*width: 100%;
 }
+
+#typeahead {
+	width: 85%;
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+	div#data div.span4 {
+		width: 50%;
+		margin-right: 0;
+	}
+}
