@@ -62,7 +62,7 @@
 
 @media screen and (min-width: 480px) and (max-width: 768px) {
 	div#data div.span4 {
-		width: 50%;
-		margin-right: 0;
+		width: 49%;
+		margin-right: 3px;
 	}
 }
