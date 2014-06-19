@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Lcmd : Language Coverage Matrix Dashboard" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Lcmd</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/harshkothari410/lcmd">View on GitHub</a>
+
+          <h1 id="project_title">Lcmd</h1>
+          <h2 id="project_tagline">Language Coverage Matrix Dashboard</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/harshkothari410/lcmd/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/harshkothari410/lcmd/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="lcmd" class="anchor" href="#lcmd"><span class="octicon octicon-link"></span></a>lcmd</h1>
+
+<p>Language Coverage Matrix Dashboard</p>
+
+<p>The Language Coverage Matrix dashboard would help automate the information about language support provided by the Language Engineering team for e.g. key maps, web fonts, translation, language selector, i18n support for gender, plurals, grammar rules. The LCM would display this information as well as provide visualization graphs of language coverage using various search criteria such as tools or languages. I will build this web based dashboard using Javascript libraries integrated with MySQL to manage the data. This project is very useful for language engineering team since wikipedia supports more than 300 languages. This tool will help them analyse the details of various available features of individual language. The Language Engineering team can efficiently prioritize and include some missing features , that is the features which are not currently available particular language. The overall impact of this project will lead to an efficient and enhanced user experience for Wikis.</p>
+
+<p>This web based dashboard will also help other products and communities for showing innumerous search results and visualization graphs for the same.</p>
+
+<h2>
+<a name="instalation" class="anchor" href="#instalation"><span class="octicon octicon-link"></span></a>Instalation</h2>
+
+<ul>
+<li>
+<p>Clone this LCMD using following command</p>
+
+<ul>
+<li>git clone <a href="https://github.com/harshkothari410/lcmd.git">https://github.com/harshkothari410/lcmd.git</a>
+or you can simply download zip version / ssh / subversion / HTTPS clone</li>
+</ul>
+</li>
+<li>
+<p>After that you have to create database </p>
+
+<ul>
+<li>Database Name : lcmdashboard</li>
+<li>host : localhost</li>
+<li>username : root</li>
+<li>password : root</li>
+</ul>
+</li>
+<li><p>If you have different username and password then go to lib directory where you will find dbconnect.php file. You just alter that file using your username and password and save it. </p></li>
+<li>Now its time to create tables and enter data from the dump. for that go to database directory and </li>
+<li>If you are using command line version of MySQL then type following command into that
+
+<ul>
+<li>&gt; mysql -u username -p lcmdashboard &lt; lcmdashboard.sql</li>
+<li>&gt; mysql -u username -p lcmdashboard &lt; data.sql</li>
+</ul>
+</li>
+<li>If you are using phpmyadmin GUI version then import lcmdashboard.sql and data.sql So your database is created</li>
+<li>Now Finally go to localhost / server and run this project Bingo you will find it running :) :)</li>
+</ul><p>If you find any difficulty then mail me to <a href="mailto:harshkothari410@gmail.com">harshkothari410@gmail.com</a></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Lcmd maintained by <a href="https://github.com/harshkothari410">harshkothari410</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
